@@ -1,0 +1,30 @@
+.sidebarall {
+    overflow: scroll initial;
+    display: flex;
+    height: 100vh;
+    font-family: Monaco;
+    font-weight: bold;
+    font-size: 00px;
+}
+
+.ProSidebar {
+    height: 100vh;
+    background-color: rgb(241, 241, 241);
+    font-family: Monaco;
+    font-weight: bold;
+    font-size: 400px;
+    color: black;
+}
+
+.Menu {
+    font-family: Monaco;
+    font-weight: bold;
+}
+
+.myIcon {
+    font-size: 100px;
+}
+
+.mySubIcon {
+    font-size: 35px;
+}

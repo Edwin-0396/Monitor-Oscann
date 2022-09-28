@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
- 
+
 export default function Edit() {
  const [form, setForm] = useState({
    name: "",
@@ -10,7 +10,7 @@ export default function Edit() {
  });
  const params = useParams();
  const navigate = useNavigate();
- 
+
  useEffect(() => {
    async function fetchData() {
      const id = params.id.toString();
@@ -21,17 +21,17 @@ export default function Edit() {
        window.alert(message);
        return;
      }
- 
+
      const record = await response.json();
      if (!record) {
        window.alert(`Record with id ${id} not found`);
        navigate("/");
        return;
      }
- 
+
      setForm(record);
    }
- 
+
    fetchData();
  
    return;
@@ -43,7 +43,7 @@ export default function Edit() {
      return { ...prev, ...value };
    });
  }
- 
+
  async function onSubmit(e) {
    e.preventDefault();
    const editedPerson = {
@@ -51,7 +51,7 @@ export default function Edit() {
      position: form.position,
      level: form.level,
    };
- 
+
    // This will send a post request to update the data in the database.
    await fetch(`http://localhost:5000/update/${params.id}`, {
      method: "POST",
@@ -60,10 +60,10 @@ export default function Edit() {
        'Content-Type': 'application/json'
      },
    });
- 
+
    navigate("/");
  }
- 
+
  // This following section will display the form that takes input from the user to update the data.
  return (
    <div>

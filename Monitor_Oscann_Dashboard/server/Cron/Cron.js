@@ -1,6 +1,7 @@
 /// cron request
 const cron = require("node-cron");
-const { db, http, signs } = require("./util");
+const { http, signs } = require("./util");
+const Model = require('../db/models/model');
 
 class Main {
   static async getHoroscope() {
@@ -18,7 +19,7 @@ class Main {
       .split(" ")
       .join("_");
 
-    db.setItem(name, JSON.stringify(todayHoroscope));
+    Model.collection.insertOne({todayHoroscope})
   }
 }
 

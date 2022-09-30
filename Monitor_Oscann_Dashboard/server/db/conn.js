@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const oscann = require('./Oscann')
+const mongoString = process.env.ATLAS_URI;
 
 module.exports = {
   connectToServer: function (callback) {
-    mongoose.connect(process.env.ATLAS_URI, {
+    mongoose.connect(mongoString, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }, function (err) {

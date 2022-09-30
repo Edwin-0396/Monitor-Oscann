@@ -1,25 +1,31 @@
-import React from "react";
- 
-// We use Route in order to define the different routes of our application
-import { Route, Routes } from "react-router-dom";
- 
-// We import all the components we need in our app
-import Navbar from "./components/navbar";
-import RecordList from "./components/recordList";
-import Edit from "./components/edit";
-import Create from "./components/create";
+import './stylesheets/App.css';
+import Sidebar from './sidebar';
+import { Routes, Route } from 'react-router-dom';
+import { Oscan } from './pages/oscan';
+import './images/aura.png';
+import './stylesheets/oscan.css';
+import './images/aura.png'
 
-const App = () => {
- return (
-   <div>
-     <Navbar />
-     <Routes>
-       <Route exact path="/" element={<RecordList />} />
-       <Route path="/edit/:id" element={<Edit />} />
-       <Route path="/create" element={<Create />} />
-     </Routes>
-   </div>
- );
-};
+function App() {
+  return (
+    <div className="App">
+      <Sidebar />
+      <main>
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/oscan' element={<Oscan />}/>
+        </Routes>
+    </main >
+    </div>
+  );
+}
+
+function Home() {
+  return (
+      <div className='HomeBox'>
+          <h1>Home!</h1>
+      </div>
+  )
+}
 
 export default App;

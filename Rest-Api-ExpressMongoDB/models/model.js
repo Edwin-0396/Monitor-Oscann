@@ -1,14 +1,8 @@
 const mongoose = require('mongoose');
 
 const dataSchema = new mongoose.Schema({
-    name: {
-        required: true,
-        type: String
-    },
-    age: {
-        required: true,
-        type: Number
-    }
-})
+    _id: mongoose.Schema.Types.ObjectId,
+    name: String
+}, { collection: 'Oscann' })
 
-module.exports = mongoose.model('Data', dataSchema)
+module.exports = mongoose.model('Oscann', dataSchema)

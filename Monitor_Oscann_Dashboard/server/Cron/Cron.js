@@ -19,7 +19,7 @@ class Main {
       .split(" ")
       .join("_");
 
-    Model.collection.insertOne({todayHoroscope})
+    //Model.collection.insertOne({todayHoroscope})
   }
 }
 

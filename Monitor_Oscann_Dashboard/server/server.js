@@ -5,7 +5,7 @@ require("dotenv").config({ path: "./config.env" });
 const Model = require('./db/models/model');
 const dbo = require("./db/conn");
 const model_json = require("./model.json");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4600;
 
 const app = express();
 app.use(cors())

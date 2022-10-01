@@ -3,7 +3,7 @@ import '../images/aura.png';
 import React, { useEffect, useState } from 'react';
 export function Oscan() {
 
-  const URL = 'http://localhost:4500/api/getAll'
+  const URL = 'http://localhost:4600/api/getAll'
   const [records, setRecords] = useState([]);
 
   
@@ -26,10 +26,18 @@ export function Oscan() {
  
     return;
   }, [records.length]);
+  //var obj = records[0];
+  //var key = Object.keys(obj)[0];
+  //var value = obj[key];
 
-  const result = records.find(({ _id }) => _id === "62f0678e21ec806286173967");
-  const result1 = records.find(({ _id }) => _id === "62fa33b539ee1cfcb82d0491");
-  console.log('result',result)
+  //console.log(typeof(records[0]))
+  //console.log(records[0].Distribuidores_hospitalarios[0].DH_name)
+  //console.log("key = ", key) // bar
+  //console.log("value = ", value) // baz
+  //console.log(records.length)
+  //console.log(Object.keys(records[0])[0])
+  //let keys = Object.keys(records)
+  //const loopsDistribuidor = records.map(items)
     return (
       <div className='appContainer'>
         <table>
@@ -42,47 +50,15 @@ export function Oscan() {
             </tr>
           </thead>
           <tbody>
+          {records.map((loop) => (
             <>
-            {result1 &&
             <tr>
-              <td>ok</td>
+              <td>{loop.Distribuidores_hospitalarios[0].DH_name}</td>
               <td>RAM</td> 
               <td>30%</td>
-            </tr>}
-            {result1 &&
-            <tr>
-              <td>ok</td>
-              <td>Network</td> 
-              <td>Ok</td>
-            </tr>}
-            {result1 &&
-            <tr>
-              <td>ok</td>
-              <td>CPU</td> 
-              <td>20%</td>
-            </tr>}
-            {result1 &&
-            <tr>
-              <td>ok</td>
-              <td>Drive(HD)</td> 
-              <td>60%</td>
-            </tr>}
-            {result1 &&
-            <tr>
-              <td>ok</td>
-              <td>Led Service</td> 
-              <td>Fail</td>
-              <td>(o)</td>
-            </tr>}
-            {result1 &&
-            <tr>
-              <td>ok</td>
-              <td>Camera</td> 
-              <td>Ok</td>
-              <td>(o)</td>
-            </tr>}
-            
+            </tr>
             </>
+          ))}
           </tbody>
         </table>
       </div>

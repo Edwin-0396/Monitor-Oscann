@@ -1,7 +1,7 @@
 /// cron request
 const cron = require("node-cron");
 const { http, signs } = require("./util");
-const Model = require('../db/models/model');
+const Model = require('../db/models/model_distribuidor');
 
 class Main {
   static async getHoroscope() {

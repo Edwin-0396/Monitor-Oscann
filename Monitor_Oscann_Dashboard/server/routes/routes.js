@@ -1,5 +1,5 @@
 const express = require('express');
-const Model = require('../db/models/model');
+const Model = require('../db/models/model_distribuidor');
 const router = express.Router();
 
 //Post Method

@@ -1,5 +1,4 @@
 .sidebarall {
-    overflow: scroll initial;
     display: flex;
     height: 100vh;
     font-family: Monaco;
@@ -13,11 +12,12 @@
 
 .ProSidebar {
     height: 100vh;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(245, 245, 245);
     font-family: Monaco;
     font-weight: bold;
     font-size: 400px;
     color: black;
+    overflow-y:scroll;
 }
 
 .Menu {

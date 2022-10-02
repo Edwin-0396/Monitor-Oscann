@@ -1,7 +1,7 @@
 import './stylesheets/App.css';
 import Sidebar from './sidebar';
 import { Routes, Route } from 'react-router-dom';
-import { Oscan } from './pages/oscan';
+import { default as Oscann } from './pages/Oscann';
 import './images/aura.png';
 import './stylesheets/oscan.css';
 import './images/aura.png'
@@ -10,12 +10,11 @@ function App() {
   return (
     <div className="App">
       <Sidebar />
-      <main>
         <Routes>
           <Route path='/' element={<Home />}/>
-          <Route path='/oscan' element={<Oscan />}/>
+          <Route path='/Oscann' element={<Oscann />}/>
+          <Route path='/Oscann/:id' element={<Oscann />}/>
         </Routes>
-    </main >
     </div>
   );
 }
@@ -23,7 +22,6 @@ function App() {
 function Home() {
   return (
       <div className='HomeBox'>
-          <h1>Home!</h1>
       </div>
   )
 }

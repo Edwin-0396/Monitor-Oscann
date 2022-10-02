@@ -35,13 +35,14 @@ app.listen(port, () => {
   const replacement = {
     network_status: "WORKING",
     drive_status: "FULL"
-  };*/
-  model_oscann.updateMany({}, { $set: { network_status: 'foo' } });
+  };
+  model_oscann.updateMany({}, { $set: { network_status: 'foo' } });*/
 
 
   //model_oscann.collection.insertMany(Model_Oscann)
-  model_oscann.rep
-  
+
+  //console.log(model_oscann.find({ ID: '101' }))
+
   model_distribuidor.collection.insertOne(Model_Distribuidor)
 
 const Cron = require('./Cron/Cron');

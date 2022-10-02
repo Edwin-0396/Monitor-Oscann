@@ -24,7 +24,7 @@ import {IoMdRefresh} from 'react-icons/io';
         <main className='OscannMain'>
           <header>
           <h1>Panel Information / Action</h1>
-          <p><b><pre>Oscann_1   >   Santa ana   >   eps_regional1   >   Colombia</pre></b></p>
+          <p><b><pre>Oscann_1   {'>'}   Santa ana   {'>'}   eps_regional1   {'>'}   Colombia</pre></b></p>
         </header>
         <table>
           <thead>

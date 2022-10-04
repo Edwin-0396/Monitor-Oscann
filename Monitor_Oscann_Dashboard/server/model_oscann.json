@@ -1,6 +1,6 @@
 [
 	{
-		"ID": "101",
+		"name_oscann": "Oscann_1",
 		"network_status": "0",
 		"network_value": "30",
 		"ram_status": "2",
@@ -15,11 +15,11 @@
 		"camera_value": "ok"
 	},
 	{
-		"ID": "102",
-		"network_status": "1",
-		"network_value": "NOTOK",
+		"name_oscann": "Oscann_2",
+		"network_status": "0",
+		"network_value": "30",
 		"ram_status": "2",
-		"ram_value": "30%",
+		"ram_value": "70%",
 		"cpu_status": "2",
 		"cpu_value": "29%",
 		"drive_status": "1",
@@ -28,13 +28,13 @@
 		"ledservice_value": "Fail",
 		"camera_status": "0",
 		"camera_value": "ok"
-	},
-	{
-		"ID": "103",
-		"network_status": "2",
-		"network_value": "ok",
+	  },
+	  {
+		"name_oscann": "Oscann_3",
+		"network_status": "0",
+		"network_value": "30",
 		"ram_status": "2",
-		"ram_value": "30%",
+		"ram_value": "70%",
 		"cpu_status": "2",
 		"cpu_value": "29%",
 		"drive_status": "1",
@@ -43,13 +43,13 @@
 		"ledservice_value": "Fail",
 		"camera_status": "0",
 		"camera_value": "ok"
-	},
-	{
-		"ID":"104",
-		"network_status": "3",
-		"network_value": "ok",
+	  },
+	  {
+		"name_oscann": "Oscann_4",
+		"network_status": "0",
+		"network_value": "30",
 		"ram_status": "2",
-		"ram_value": "30%",
+		"ram_value": "70%",
 		"cpu_status": "2",
 		"cpu_value": "29%",
 		"drive_status": "1",
@@ -58,13 +58,13 @@
 		"ledservice_value": "Fail",
 		"camera_status": "0",
 		"camera_value": "ok"
-	},
-	{
-		"ID":"105",
-		"network_status": "4",
-		"network_value": "ok",
+	  },
+	  {
+		"name_oscann": "Oscann_5",
+		"network_status": "0",
+		"network_value": "30",
 		"ram_status": "2",
-		"ram_value": "30%",
+		"ram_value": "70%",
 		"cpu_status": "2",
 		"cpu_value": "29%",
 		"drive_status": "1",
@@ -73,13 +73,13 @@
 		"ledservice_value": "Fail",
 		"camera_status": "0",
 		"camera_value": "ok"
-	},
-	{
-		"ID":"106",
-		"network_status": "5",
-		"network_value": "ok",
+	  },
+	  {
+		"name_oscann": "Oscann_6",
+		"network_status": "0",
+		"network_value": "30",
 		"ram_status": "2",
-		"ram_value": "30%",
+		"ram_value": "70%",
 		"cpu_status": "2",
 		"cpu_value": "29%",
 		"drive_status": "1",
@@ -88,5 +88,20 @@
 		"ledservice_value": "Fail",
 		"camera_status": "0",
 		"camera_value": "ok"
-	}
+	  },
+	  {
+		"name_oscann": "Oscann_7",
+		"network_status": "0",
+		"network_value": "30",
+		"ram_status": "2",
+		"ram_value": "70%",
+		"cpu_status": "2",
+		"cpu_value": "29%",
+		"drive_status": "1",
+		"drive_value": "60%",
+		"ledservice_status": "2",
+		"ledservice_value": "Fail",
+		"camera_status": "0",
+		"camera_value": "ok"
+	  }
 ]

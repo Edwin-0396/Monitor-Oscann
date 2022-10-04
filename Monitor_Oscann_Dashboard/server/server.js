@@ -59,7 +59,6 @@ const updateOscann = async (key_update) => {
   console.log("Updated At:", doc.updatedAt);
 };
 
-
 const start = async () => {
   //await saveOscann(Model_Oscann);
   //new model_oscann.insertMany(Model_Oscann)

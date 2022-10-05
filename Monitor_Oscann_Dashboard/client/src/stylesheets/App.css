@@ -3,10 +3,10 @@
 }
 
 .HomeBox {
-    align-items: center;
-    background-image: url("../images/aura.png");
-    background-size: cover;
+    background-image: url("../images/aura-products-oscann-bw.png");
+    width: 70em;
+    height: 49em;
+    align-content: center;
+    background-origin: content-box;
     background-repeat: no-repeat;
-    width: 150vh;
-    height: 100vh;
 }

@@ -1,5 +1,4 @@
 .sidebarall {
-    overflow: scroll initial;
     display: flex;
     height: 100vh;
     font-family: Monaco;
@@ -9,30 +8,55 @@
     margin-left:  -14em;
     position: relative;
     left: 15em;
+    text-align: justify;
 }
 
 .ProSidebar {
     height: 100vh;
-    background-color: rgb(255, 255, 255);
-    font-family: Monaco;
+    background-color: #1e1e21;
+    font-family: Arial Rounded MT Bold, Monaco;
     font-weight: bold;
     font-size: 400px;
-    color: black;
+    color: rgb(255, 255, 255);
+    overflow-y:scroll;
+    text-align: justify;
 }
 
 .Menu {
-    font-family: Monaco;
-    font-weight: bold;
+    font-family: Arial Rounded MT Bold, Monaco;
+    text-align: left;
+    display: flex;
+    flex-flow: column wrap;
+    align-content:flex-start;
+
 }
 
 .myIcon {
     font-size: 35px;
+    display: flex;
+    flex-flow: column wrap;
+    align-content:flex-start;
+    
 }
 
 .mySubIcon {
     font-size: 35px;
+    display: flex;
+
+    left: 500px;
 }
 
 .iconoOscanns {
     font-size: 35px;
+
+}
+
+
+.Hola {
+    right: 66px;
+    position: relative;
+}
+
+.namesOscann {
+    margin-left: 90px;
 }

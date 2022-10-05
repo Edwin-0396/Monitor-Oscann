@@ -3,7 +3,7 @@ import {CDBSidebarContent, CDBSidebarHeader} from 'cdbreact';
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import './stylesheets/sidebar.css';
-import {IoMdDisc} from 'react-icons/io';
+import { IoMdCloseCircle, IoMdDisc } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
 function Sidebar() {
@@ -46,19 +46,20 @@ function Sidebar() {
                     <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large" onClick={function () {
                         setIsOpen()
                     }}></i>}>
-                        <Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}>Aura</Link> 
+                        <Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}>Oscann</Link> 
                     </CDBSidebarHeader>
                     <CDBSidebarContent>
-                        <Menu>
+                    <Menu>
+                        <div className='mennu2'>
                         {records.map((loop) => (
                             <div className='Menu'>
-                                <SubMenu title={loop.nombre_distribuidor} icon= {<IoMdDisc className='myIcon' style={{color: 'red'}} />}>
+                                <SubMenu title={loop.nombre_distribuidor} icon= {<IoMdCloseCircle className='myIcon' style={{color: 'red'}} />}>
                                 {loop.Distribuidores_hospitalarios.map((loop1) => (
                                     <SubMenu title={loop1.DH_name} icon= {<IoMdDisc  className='mySubIcon' style={{color: 'green'}} />}>
                                         {loop1.Hospitales.map((loop2) => (
                                         <SubMenu title={loop2.hospital_name} icon= {<IoMdDisc  className='mySubIcon' style={{color: 'green'}} />}>
                                             {loop2.Oscann.map((loop3) => (
-                                                <div ><MenuItem icon= {<IoMdDisc className='iconoOscanns' style={{color: 'red'}} />}><Link to='/oscan'>{loop3.NAME} </Link></MenuItem></div>
+                                                <div className='Hola' ><MenuItem icon= {<IoMdDisc  className='iconoOscanns' style={{color: 'red'}} />}><div className='namesOscann'><Link to={`/Oscann/${loop3.ID}/${loop3.NAME}/${loop2.hospital_name}/${loop1.DH_name}/${loop.nombre_distribuidor}`}style={{  color: 'inherit' }}>{loop3.NAME} </Link></div></MenuItem></div>
                                             ))}
                                         </SubMenu>
                                         ))}    
@@ -66,7 +67,8 @@ function Sidebar() {
                                     ))}
                                 </SubMenu>
                             </div>
-                        ))}
+                            ))}
+                            </div>
                         </Menu>
                     </CDBSidebarContent>
                 </div>

@@ -1,6 +1,8 @@
 const express = require('express');
-const Model = require('../db/models/model');
+const Model = require('../db/models/model_distribuidor');
 const router = express.Router();
+const model_distribuidor = require('../db/models/model_distribuidor');
+const model_oscann = require('../db/models/model_oscann');
 
 //Post Method
 router.post('/post', async (req, res) => {
@@ -21,7 +23,7 @@ router.post('/post', async (req, res) => {
 //Get all Method
 router.get('/getAll', async (req, res) => {
     try {
-        const data = await Model.find();
+        const data = await model_distribuidor.find();
         res.json(data)
     }
     catch (error) {
@@ -32,7 +34,7 @@ router.get('/getAll', async (req, res) => {
 //Get by ID Method
 router.get('/getOne/:id', async (req, res) => {
     try {
-        const data = await Model.findById(req.params.id);
+        const data = await  model_oscann.findOne({ ID: req.params.id.toString() });
         res.json(data)
     }
     catch (error) {
@@ -47,7 +49,7 @@ router.patch('/update/:id', async (req, res) => {
         const updatedData = req.body;
         const options = { new: true };
 
-        const result = await Model.findByIdAndUpdate(
+        const result = await model_distribuidor.findByIdAndUpdate(
             id, updatedData, options
         )
 
@@ -62,7 +64,7 @@ router.patch('/update/:id', async (req, res) => {
 router.delete('/delete/:id', async (req, res) => {
     try {
         const id = req.params.id;
-        const data = await Model.findByIdAndDelete(id)
+        const data = await model_distribuidor.findByIdAndDelete(id)
         res.send(`Document with ${data.name} has been deleted..`)
     }
     catch (error) {

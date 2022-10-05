@@ -7,7 +7,8 @@ const model_distribuidor = require('./db/models/model_distribuidor');
 const model_oscann = require('./db/models/model_oscann');
 const dbo = require("./db/conn");
 const Model_Oscann = require("./model_oscann.json");
-const Model_Distribuidor = require("./model_distribuidor.json");
+const graphql_Distributor = require("./Mongo_distributor.json");
+const Model_Distributor = require("./graphql_distributor.json");
 const port = process.env.PORT || 4500;
 
 const app = express();
@@ -19,12 +20,12 @@ const routes = require('./routes/routes');
 app.use('/api', routes)
 
 app.listen(port, () => {
-  // perform a database connection when server starts
-  dbo.connectToServer(function (err) {
-    if (err) console.error(err);
+	// perform a database connection when server starts
+	dbo.connectToServer(function (err) {
+		if (err) console.error(err);
 
-  });
-  console.log(`Server is running on port: ${port}`);
+	});
+	console.log(`Server is running on port: ${port}`);
 });
 
 /*const query = { network_status: '3' };
@@ -40,151 +41,91 @@ const replacement = {
 model_oscann.updateMany({}, { $set: { network_status: 'foo' } });*/
 
 const saveOscann = async (oscann_save) => {
-    for(let idx=0;idx<oscann_save.length;idx++){
+	for (let idx = 0; idx < oscann_save.length; idx++) {
 		let s = new model_oscann(oscann_save[idx]);
-    	s.save().then((doc) => {
-      	console.log("Oscann:", doc);
-    });
-}
-    return    
+		s.save().then((doc) => {
+			console.log("Oscann:", doc);
+		});
+	}
+	return
 };
 
 const updateOscann = async (key_update) => {
-  let doc = await model_oscann.findOneAndUpdate(
-    key_update,
-    { new: true }
-  );
-  console.log("Oscann:", doc);
-  console.log("Created At:", doc.createdAt);
-  console.log("Updated At:", doc.updatedAt);
+	let doc = await model_oscann.findOneAndUpdate(
+		key_update,
+		{ new: true }
+	);
+	console.log("Oscann:", doc);
+	//console.log("Created At:", doc.createdAt);
+	//console.log("Updated At:", doc.updatedAt);
 };
 
+
+/*
+var dictstring = JSON.stringify(dict);
+var fs = require('fs');
+fs.writeFile("thing.json", dictstring);*/
+
 const start = async () => {
-  //await saveOscann(Model_Oscann);
-  //new model_oscann.insertMany(Model_Oscann)
 
-  //Request Graphql
-  key_update =  [{
-		"name_oscann": "Oscann_1",
-		"network_status": "0",
-		"network_value": "30",
-		"ram_status": "2",
-		"ram_value": "70%",
-		"cpu_status": "2",
-		"cpu_value": "29%",
-		"drive_status": "1",
-		"drive_value": "60%",
-		"ledservice_status": "2",
-		"ledservice_value": "Fail",
-		"camera_status": "0",
-		"camera_value": "ok"
-	},
-	{
-		"name_oscann": "Oscann_2",
-		"network_status": "0",
-		"network_value": "30",
-		"ram_status": "2",
-		"ram_value": "70%",
-		"cpu_status": "2",
-		"cpu_value": "29%",
-		"drive_status": "1",
-		"drive_value": "60%",
-		"ledservice_status": "2",
-		"ledservice_value": "Fail",
-		"camera_status": "0",
-		"camera_value": "ok"
-	  },
-	  {
-		"name_oscann": "Oscann_3",
-		"network_status": "0",
-		"network_value": "30",
-		"ram_status": "2",
-		"ram_value": "70%",
-		"cpu_status": "2",
-		"cpu_value": "29%",
-		"drive_status": "1",
-		"drive_value": "60%",
-		"ledservice_status": "2",
-		"ledservice_value": "Fail",
-		"camera_status": "0",
-		"camera_value": "ok"
-	  },
-	  {
-		"name_oscann": "Oscann_4",
-		"network_status": "0",
-		"network_value": "30",
-		"ram_status": "2",
-		"ram_value": "70%",
-		"cpu_status": "2",
-		"cpu_value": "29%",
-		"drive_status": "1",
-		"drive_value": "60%",
-		"ledservice_status": "2",
-		"ledservice_value": "Fail",
-		"camera_status": "0",
-		"camera_value": "ok"
-	  },
-	  {
-		"name_oscann": "Oscann_5",
-		"network_status": "0",
-		"network_value": "30",
-		"ram_status": "2",
-		"ram_value": "70%",
-		"cpu_status": "2",
-		"cpu_value": "29%",
-		"drive_status": "1",
-		"drive_value": "60%",
-		"ledservice_status": "2",
-		"ledservice_value": "Fail",
-		"camera_status": "0",
-		"camera_value": "ok"
-	  },
-	  {
-		"name_oscann": "Oscann_6",
-		"network_status": "0",
-		"network_value": "30",
-		"ram_status": "2",
-		"ram_value": "70%",
-		"cpu_status": "2",
-		"cpu_value": "29%",
-		"drive_status": "1",
-		"drive_value": "60%",
-		"ledservice_status": "2",
-		"ledservice_value": "Fail",
-		"camera_status": "0",
-		"camera_value": "ok"
-	  },
-	  {
-		"name_oscann": "Oscann_7",
-		"network_status": "0",
-		"network_value": "50",
-		"ram_status": "2",
-		"ram_value": "70%",
-		"cpu_status": "2",
-		"cpu_value": "29%",
-		"drive_status": "1",
-		"drive_value": "60%",
-		"ledservice_status": "2",
-		"ledservice_value": "Fail",
-		"camera_status": "0",
-		"camera_value": "ok"
-	  }]
+	model_distribuidor.find({}, async function (err, data) {
+		//const fs = require('fs')
+		//console.log("MONGO: ", JSON.stringify(data), JSON.stringify(graphql_Distributor).length)
+		//console.log("GRAPHQL: ", JSON.stringify(graphql_Distributor), JSON.stringify(graphql_Distributor).length)
 
-  //23:41:11
-  for (let idx_GQ = 0; idx_GQ < key_update.length; idx_GQ++) {
-    for (let idx_M_o = 0; idx_M_o < Model_Oscann.length; idx_M_o++){
-      if (key_update[idx_GQ].name_oscann === Model_Oscann[idx_M_o].name_oscann){
-        if (JSON.stringify(Model_Oscann[idx_M_o]) !== JSON.stringify(key_update[idx_GQ])) {
-          console.log("SON DIFERENTES")
-          await saveOscann(key_update);
-        } else {
-          setTimeout(function () {
-            updateOscann(key_update);
-          }, 3000);
-        }
-      }
-    }
- }
+		for (let idx_GQ = 0; idx_GQ < graphql_Distributor.length; idx_GQ++) {
+			for (let idx_M_o = 0; idx_M_o < data.length; idx_M_o++) {
+				console.log(idx_M_o)
+				console.log(data[idx_M_o])
+				console.log()
+				if (data[idx_M_o].nombre_distribuidor === graphql_Distributor[idx_GQ].nombre_distribuidor) {
+					if (JSON.stringify(data[idx_M_o].nombre_distribuidor) !== JSON.stringify(graphql_Distributor[idx_GQ].nombre_distribuidor)) {
+						console.log("SON DIFERENTES")
+						await saveOscann(graphql_Distributor[0]);
+					} else {
+						setTimeout(function () {
+							console.log("SON IGUALES")
+							updateOscann(graphql_Distributor[0]);
+						}, 3000);
+					}
+				}
+			}
+		}
+		/*const jsonString = JSON.stringify(data)
+		fs.writeFileSync('./graphql_distributor.json', jsonString, err => {
+			if (err) {
+				console.log('Error writing file', err)
+			} else {
+				console.log('Successfully wrote file')
+			}
+		})*/
+	});
+
+
+	//await saveOscann(Model_Oscann);
+	//new model_oscann.insertMany(Model_Oscann)
+
+	//Request Graphql
+
+	/*	console.log(Model_Distributor)
+		console.log()
+		console.log(graphql_Distributor)*/
+
+	//23:41:11
+	/*for (let idx_GQ = 0; idx_GQ < key_update.length; idx_GQ++) {
+		for (let idx_M_o = 0; idx_M_o < Model_Oscann.length; idx_M_o++){
+		  if (key_update[idx_GQ].name_oscann === Model_Oscann[idx_M_o].name_oscann){
+			if (JSON.stringify(Model_Oscann[idx_M_o]) !== JSON.stringify(key_update[idx_GQ])) {
+			  console.log("SON DIFERENTES")
+			  await saveOscann(key_update);
+			} else {
+			  setTimeout(function () {
+				updateOscann(key_update);
+			  }, 3000);
+			}
+		  }
+		}
+	 }*/
 };
 
 start();
@@ -192,6 +133,6 @@ start();
 
 //console.log(model_oscann.find({ ID: '101' }))
 
-model_distribuidor.collection.insertMany(Model_Distribuidor);
+//model_distribuidor.collection.insertMany(Model_Distributor);
 
 const Cron = require('./Cron/Cron');

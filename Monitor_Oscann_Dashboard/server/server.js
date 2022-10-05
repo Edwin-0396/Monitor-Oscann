@@ -6,7 +6,7 @@ require("dotenv").config({ path: "./config.env" });
 const model_distribuidor = require('./db/models/model_distribuidor');
 const model_oscann = require('./db/models/model_oscann');
 const dbo = require("./db/conn");
-const Model_Oscann = require("./model_oscann.json");
+//const Model_Oscann = require("./model_oscann.json");
 const graphql_Distributor = require("./Mongo_distributor.json");
 const Model_Distributor = require("./graphql_distributor.json");
 const port = process.env.PORT || 4500;
@@ -40,7 +40,7 @@ const replacement = {
 };
 model_oscann.updateMany({}, { $set: { network_status: 'foo' } });*/
 
-const saveOscann = async (oscann_save) => {
+const saveGraphql = async (oscann_save) => {
 	for (let idx = 0; idx < oscann_save.length; idx++) {
 		let s = new model_oscann(oscann_save[idx]);
 		s.save().then((doc) => {
@@ -50,7 +50,7 @@ const saveOscann = async (oscann_save) => {
 	return
 };
 
-const updateOscann = async (key_update) => {
+const updateGraphql = async (key_update) => {
 	let doc = await model_oscann.findOneAndUpdate(
 		key_update,
 		{ new: true }
@@ -79,13 +79,14 @@ const start = async () => {
 				console.log(data[idx_M_o])
 				console.log()
 				if (data[idx_M_o].nombre_distribuidor === graphql_Distributor[idx_GQ].nombre_distribuidor) {
+					console.log(data[idx_M_o].nombre_distribuidor)
 					if (JSON.stringify(data[idx_M_o].nombre_distribuidor) !== JSON.stringify(graphql_Distributor[idx_GQ].nombre_distribuidor)) {
 						console.log("SON DIFERENTES")
-						await saveOscann(graphql_Distributor[0]);
+						await saveGraphql(graphql_Distributor[0]);
 					} else {
 						setTimeout(function () {
 							console.log("SON IGUALES")
-							updateOscann(graphql_Distributor[0]);
+							updateGraphql(graphql_Distributor[0]);
 						}, 3000);
 					}
 				}

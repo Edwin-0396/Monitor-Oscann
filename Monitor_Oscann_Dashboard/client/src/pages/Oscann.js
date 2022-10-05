@@ -6,28 +6,30 @@ import {IoMdRefresh} from 'react-icons/io';
 
 
   const Oscann = () => {
-    const {id} = useParams()
+    const {id, name, Hospital, DistribuidorHospital, nombre_distribuidor} = useParams()
     const [records, setRecords] = useState([]);
 
     React.useEffect(() => {
       getRecords()
-    }, [])
+    }, [id])
 
     async function getRecords() {
       const response = await fetch(`http://localhost:4600/api/getOne/${id}`);
       const oscanns = await response.json();
       setRecords(oscanns)
     }
-    console.log(records)
+
+    console.log(name)
     return (
       <div className='appContainer'>
         <main className='OscannMain'>
           <header>
-          <h1>Panel Information / Action</h1>
-          <p><b><pre>Oscann_1   {'>'}   Santa ana   {'>'}   eps_regional1   {'>'}   Colombia</pre></b></p>
+          <h1>Panel Information / Action</h1> {console.log(nombre_distribuidor)}
+          <p><b>{name}&emsp;&emsp;{">"}&emsp;&emsp;{Hospital}&emsp;&emsp;{">"}&emsp;&emsp;{DistribuidorHospital}&emsp;&emsp;{">"}&emsp;&emsp;{nombre_distribuidor}</b></p>
         </header>
-        <table>
-          <thead>
+        <div className='tablesize'>
+        <table class="table table-dark table-striped ">
+          <thead >
             <tr>
               <th>Status</th>
               <th>Element</th>
@@ -35,47 +37,47 @@ import {IoMdRefresh} from 'react-icons/io';
               <th>Button</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody >
             <>
-            <tr className='gray'>
-              <td>OK</td>
+            <tr className='gray' >
+              <td>{records.network_status}</td>
               <td>Network</td> 
-              <td>OK</td>
+              <td>{records.network_value}</td>
               <td></td>
             </tr>
             <tr>
-              <td>OK</td>
+              <td>{records.ram_status}</td>
               <td>RAM</td> 
-              <td>30%</td>
+              <td>{records.ram_value}</td>
               <td></td>
             </tr>
             <tr className='gray'>
-              <td>OK</td>
+              <td>{records.cpu_status}</td>
               <td>CPU</td> 
-              <td>29%</td>
+              <td>{records.cpu_value}</td>
               <td></td>
             </tr>
             <tr>
-              <td>OK</td>
+              <td>{records.drive_status}</td>
               <td>Drive (HD)</td> 
-              <td>100%</td>
+              <td>{records.drive_value}</td>
               <td></td>
             </tr>
             <tr className='gray'>
-              <td>Stop</td>
+              <td>{records.ledservice_status}</td>
               <td>Led Service</td> 
-              <td>Fail</td>
+              <td>{records.ledservice_value}</td>
               <td><IoMdRefresh className='iconref'/></td>
             </tr>
             <tr>
-              <td>OK</td>
+              <td>{records.camera_status}</td>
               <td>camera Service (HD)</td> 
-              <td>OK</td>
+              <td>{records.camera_value}</td>
               <td><IoMdRefresh className='iconref'/></td>
             </tr>
             </>
           </tbody>
-        </table>
+        </table></div>
         <div className='Boton1'>
         <button>Refresh</button>
         </div>
@@ -86,5 +88,4 @@ import {IoMdRefresh} from 'react-icons/io';
       </div>
     )
   }
-
   export default Oscann

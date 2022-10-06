@@ -48,9 +48,9 @@ const start = async () => {
 	model_distribuidor.find({}, async function (err, data) {
 
 		//Only test! - create new database
-		for (idx_gql = 0; idx_gql < graphql_Distributor.length; idx_gql++) {
+		/*for (idx_gql = 0; idx_gql < graphql_Distributor.length; idx_gql++) {
 			await saveGraphql(graphql_Distributor[idx_gql]);
-		}
+		}*/
 
 		for (let idx_GQ = 0; idx_GQ < graphql_Distributor.length; idx_GQ++) {
 			for (let idx_M_o = 0; idx_M_o < data.length; idx_M_o++) {

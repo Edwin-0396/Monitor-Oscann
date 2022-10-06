@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 function Sidebar() {
     
-    const URL = 'http://localhost:4600/api/getAll'
+    const URL = 'http://localhost:4500/api/getAll'
     const [records, setRecords] = useState([]);
 
   
@@ -53,13 +53,13 @@ function Sidebar() {
                         <div className='mennu2'>
                         {records.map((loop) => (
                             <div className='Menu'>
-                                <SubMenu title={loop.nombre_distribuidor} icon= {<IoMdCloseCircle className='myIcon' style={{color: 'red'}} />}>
+                                <SubMenu className='nameDis' title={loop.nombre_distribuidor} icon= {<IoMdDisc className='myIcon' style={{color: 'red'}} />}>
                                 {loop.Distribuidores_hospitalarios.map((loop1) => (
-                                    <SubMenu title={loop1.DH_name} icon= {<IoMdDisc  className='mySubIcon' style={{color: 'green'}} />}>
+                                    <SubMenu title={loop1.DH_name} icon= {<IoMdDisc  className='mySubIcon1' style={{color: 'green'}} />}>
                                         {loop1.Hospitales.map((loop2) => (
-                                        <SubMenu title={loop2.hospital_name} icon= {<IoMdDisc  className='mySubIcon' style={{color: 'green'}} />}>
+                                        <SubMenu  title={loop2.hospital_name}icon= {<IoMdDisc  className='mySubIcon2' style={{color: 'green'}}/> }  >
                                             {loop2.Oscann.map((loop3) => (
-                                                <div className='Hola' ><MenuItem icon= {<IoMdDisc  className='iconoOscanns' style={{color: 'red'}} />}><div className='namesOscann'><Link to={`/Oscann/${loop3.ID}/${loop3.NAME}/${loop2.hospital_name}/${loop1.DH_name}/${loop.nombre_distribuidor}`}style={{  color: 'inherit' }}>{loop3.NAME} </Link></div></MenuItem></div>
+                                                <div className='Hola' >{console.log(loop3.id)}<MenuItem icon= {<IoMdDisc  className='iconoOscanns' style={{color: 'red'}} />}><div className='namesOscann'><Link to={`/Oscann/${loop3.id_oscann}/${loop3.NAME}/${loop2.hospital_name}/${loop1.DH_name}/${loop.nombre_distribuidor}`}style={{  color: 'inherit' }}>{loop3.NAME} </Link></div></MenuItem></div>
                                             ))}
                                         </SubMenu>
                                         ))}    

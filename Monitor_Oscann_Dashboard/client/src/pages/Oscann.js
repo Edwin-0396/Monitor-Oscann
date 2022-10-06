@@ -14,7 +14,7 @@ import {IoMdRefresh} from 'react-icons/io';
     }, [id])
 
     async function getRecords() {
-      const response = await fetch(`http://localhost:4600/api/getOne/${id}`);
+      const response = await fetch(`http://localhost:4500/api/getOne/${id}`);
       const oscanns = await response.json();
       setRecords(oscanns)
     }
@@ -24,8 +24,8 @@ import {IoMdRefresh} from 'react-icons/io';
       <div className='appContainer'>
         <main className='OscannMain'>
           <header>
-          <h1>Panel Information / Action</h1> {console.log(nombre_distribuidor)}
-          <p><b>{name}&emsp;&emsp;{">"}&emsp;&emsp;{Hospital}&emsp;&emsp;{">"}&emsp;&emsp;{DistribuidorHospital}&emsp;&emsp;{">"}&emsp;&emsp;{nombre_distribuidor}</b></p>
+          <h3>Panel Information / Action</h3> {console.log(nombre_distribuidor)}
+          <p><b>{name}&emsp;{">"}&emsp;{Hospital}&emsp;{">"}&emsp;{DistribuidorHospital}&emsp;{">"}&emsp;{nombre_distribuidor}</b></p>
         </header>
         <div className='tablesize'>
         <table class="table table-dark table-striped ">
@@ -40,7 +40,7 @@ import {IoMdRefresh} from 'react-icons/io';
           <tbody >
             <>
             <tr className='gray' >
-              <td>{records.network_status}</td>
+              <td>{console.log('aqui!!', records.Distribuidores_hospitalarios)}</td>
               <td>Network</td> 
               <td>{records.network_value}</td>
               <td></td>

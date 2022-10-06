@@ -1,7 +1,7 @@
 main{
   margin-top: 50px;
   width: 100%;
-  background-image: url("../images/aura-products-oscann-bw.png");
+  background-image: url("../images/aura-products-oscann.png");
   width: 70em;
   height: 45em;
   align-content: center;
@@ -10,11 +10,12 @@ main{
   
 }
   
-  header h1 {
+  header h3 {
+  font-family: Arial Rounded MT Bold, Monaco;
   border: 2px gray solid;
   background-color: #262629;
   color: white;
-  border-radius: 5px;
+  border-radius: 15px;
   justify-content: center;
   display: flex;
   box-sizing: border-box;
@@ -26,7 +27,7 @@ main{
   margin-top: 50px;
   justify-content: center;
   display: flex;
-  font-size: 25px;
+  font-size: 22px;
   
   }
 
@@ -74,29 +75,25 @@ main{
 }
 
 button{
-  border: none;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.265);
-  
+  background-color: rgb(62, 64, 65);
+  border-radius: 30px;
+  color: white;
 }
 
 .Boton2 {
-  background-color: rgba(255, 255, 255, 0.097); 
-  color: black; 
-  border: 2px solid #000000;
+  font-family: Arial Rounded MT Bold, Monaco;
   display: inline-block;
   margin-left: 150px;
   margin-top: 30px;
 }
 
 .Boton1 {
-  background-color: rgba(255, 255, 255, 0.097); 
-  color: black; 
-  border: 2px solid #000000;
+  font-family: Arial Rounded MT Bold, Monaco;
   display: inline-block;
   margin-left: 370px;
   margin-top: 30px;

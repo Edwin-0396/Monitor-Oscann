@@ -8,7 +8,6 @@ const model_oscann = require('./db/models/model_oscann');
 const dbo = require("./db/conn");
 //const Model_Oscann = require("./model_oscann.json");
 const graphql_Distributor = require("./graphql_distributor.json");
-const Model_Distributor = require("./Mongo_distributor.json");
 const port = process.env.PORT || 4500;
 
 const app = express();
@@ -57,11 +56,11 @@ const start = async () => {
 			for (let idx_M_o = 0; idx_M_o < data.length; idx_M_o++) {
 				if (data[idx_M_o].nombre_distribuidor === graphql_Distributor[idx_GQ].nombre_distribuidor) {
 					if (data[idx_M_o].Status_distribuidor !== graphql_Distributor[idx_GQ].Status_distribuidor) {
-						console.log("SON DIFERENTES")
+						//console.log("SON DIFERENTES")
 						await saveGraphql(graphql_Distributor[idx_GQ]);
 					} else {
 						setTimeout(function () {
-							console.log("SON IGUALES")
+							//console.log("SON IGUALES")
 							updateGraphql(graphql_Distributor[idx_GQ]);
 						}, 3000);
 					}

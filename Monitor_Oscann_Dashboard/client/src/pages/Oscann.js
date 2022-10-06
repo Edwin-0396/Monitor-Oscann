@@ -19,7 +19,7 @@ import {IoMdRefresh} from 'react-icons/io';
       setRecords(oscanns)
     }
 
-    console.log(name)
+    console.log(id)
     return (
       <div className='appContainer'>
         <main className='OscannMain'>
@@ -40,7 +40,7 @@ import {IoMdRefresh} from 'react-icons/io';
           <tbody >
             <>
             <tr className='gray' >
-              <td>{console.log('aqui!!', records.Distribuidores_hospitalarios)}</td>
+              <td>{records.network_status}</td>
               <td>Network</td> 
               <td>{records.network_value}</td>
               <td></td>

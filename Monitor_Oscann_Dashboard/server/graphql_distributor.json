@@ -1,10 +1,273 @@
 [
 	{
+		"Status_distribuidor":"1",
 		"nombre_distribuidor": "Colombia",
-		"Status_distribuidor":"0"
+		"Distribuidores_hospitalarios": [
+			{
+				"DH_name": "eps_regional1",
+				"Hospitales": [
+					{
+						"hospital_name": "Santa ana",
+						"Oscann": [
+							{
+								"NAME": "Oscann_1",
+								"ID": "1",
+								"CPU": "80",
+								"RAM": "70",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_2",
+								"ID": "2",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_3",
+								"ID": "2",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							}
+						]
+					},
+					{
+						"hospital_name": "Infantil",
+						"Oscann": [
+							{
+								"NAME": "Oscann_1",
+								"CPU": "80",
+								"RAM": "70",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_2",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_3",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							}
+						]
+					}
+				]
+			},
+			{
+				"DH_name": "eps_regional2",
+				"Hospitales": [
+					{
+						"hospital_name": "Minuto de Dios",
+						"Oscann": [
+							{
+								"NAME": "Oscann_1",
+								"CPU": "80",
+								"RAM": "70",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_2",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_3",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							}
+						]
+					},
+					{
+						"hospital_name": "Geriátrico",
+						"Oscann": [
+							{
+								"NAME": "Oscann_1",
+								"CPU": "80",
+								"RAM": "70",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_2",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_3",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							}
+						]
+					}
+				]
+			}
+		]
 	},
 	{
 		"nombre_distribuidor": "Perú",
-		"Status_distribuidor":"1"
+		"Status_distribuidor":"1",
+		"Distribuidores_hospitalarios": [
+			{
+				"DH_name": "eps_regional1",
+				"Hospitales": [
+					{
+						"hospital_name": "Santa ana",
+						"Oscann": [
+							{
+								"NAME": "Oscann_1",
+								"ID": "1",
+								"CPU": "80",
+								"RAM": "70",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_2",
+								"ID": "2",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_3",
+								"ID": "2",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							}
+						]
+					},
+					{
+						"hospital_name": "Infantil",
+						"Oscann": [
+							{
+								"NAME": "Oscann_1",
+								"CPU": "80",
+								"RAM": "70",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_2",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_3",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							}
+						]
+					}
+				]
+			},
+			{
+				"DH_name": "eps_regional2",
+				"Hospitales": [
+					{
+						"hospital_name": "Minuto de Dios",
+						"Oscann": [
+							{
+								"NAME": "Oscann_1",
+								"CPU": "80",
+								"RAM": "70",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_2",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_3",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							}
+						]
+					},
+					{
+						"hospital_name": "Geriátrico",
+						"Oscann": [
+							{
+								"NAME": "Oscann_1",
+								"CPU": "80",
+								"RAM": "70",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_2",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_3",
+								"CPU": "60",
+								"RAM": "50",
+								"HD": "55",
+								"LED": 0,
+								"CAMERA": 1
+							}
+						]
+					}
+				]
+			}
+		]
 	}
 ]
+

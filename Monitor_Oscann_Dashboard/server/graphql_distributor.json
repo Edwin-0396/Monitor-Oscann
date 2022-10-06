@@ -1,8 +1,6 @@
 [
 	{
-		"_id": "633cdc8088f8d27a031b6ecc",
-		"id": 1,
-		"time": "2pm",
+		"Status_distribuidor":"1",
 		"nombre_distribuidor": "Colombia",
 		"Distribuidores_hospitalarios": [
 			{
@@ -137,10 +135,8 @@
 		]
 	},
 	{
-		"_id": "633cdc8088f8d27a031b6ecd",
-		"id": 1,
-		"time": "4pm",
-		"nombre_distribuidor": "Colombia",
+		"nombre_distribuidor": "Perú",
+		"Status_distribuidor":"1",
 		"Distribuidores_hospitalarios": [
 			{
 				"DH_name": "eps_regional1",
@@ -274,3 +270,4 @@
 		]
 	}
 ]
+

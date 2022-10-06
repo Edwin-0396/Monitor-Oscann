@@ -7,8 +7,8 @@ const model_distribuidor = require('./db/models/model_distribuidor');
 const model_oscann = require('./db/models/model_oscann');
 const dbo = require("./db/conn");
 //const Model_Oscann = require("./model_oscann.json");
-const graphql_Distributor = require("./Mongo_distributor.json");
-const Model_Distributor = require("./graphql_distributor.json");
+const graphql_Distributor = require("./graphql_distributor.json");
+const Model_Distributor = require("./Mongo_distributor.json");
 const port = process.env.PORT || 4500;
 
 const app = express();
@@ -40,22 +40,22 @@ const replacement = {
 };
 model_oscann.updateMany({}, { $set: { network_status: 'foo' } });*/
 
-const saveGraphql = async (oscann_save) => {
-	for (let idx = 0; idx < oscann_save.length; idx++) {
-		let s = new model_oscann(oscann_save[idx]);
-		s.save().then((doc) => {
-			console.log("Oscann:", doc);
-		});
-	}
+const saveGraphql = async (distributor_save) => {
+	//for (let idx = 0; idx < oscann_save.length; idx++) {
+	let s = new model_distribuidor(distributor_save);
+	s.save().then((doc) => {
+		console.log("Distributor:", doc);
+	});
+	//}
 	return
 };
 
-const updateGraphql = async (key_update) => {
-	let doc = await model_oscann.findOneAndUpdate(
-		key_update,
+const updateGraphql = async (distribuidor_update) => {
+	let doc = await model_distribuidor.findOneAndUpdate(
+		distribuidor_update,
 		{ new: true }
 	);
-	console.log("Oscann:", doc);
+	//console.log("Oscann:", doc);
 	//console.log("Created At:", doc.createdAt);
 	//console.log("Updated At:", doc.updatedAt);
 };
@@ -68,27 +68,45 @@ fs.writeFile("thing.json", dictstring);*/
 
 const start = async () => {
 
+
 	model_distribuidor.find({}, async function (err, data) {
+		/*for (idx_gql = 0; idx_gql < graphql_Distributor.length; idx_gql++) {
+			await saveGraphql(graphql_Distributor[idx_gql]);
+		}*/
+
 		//const fs = require('fs')
 		//console.log("MONGO: ", JSON.stringify(data), JSON.stringify(graphql_Distributor).length)
-		//console.log("GRAPHQL: ", JSON.stringify(graphql_Distributor), JSON.stringify(graphql_Distributor).length)
-
+		//console.log("GRAPHQL: ", JSON.stringify(graphql_Distributor), (data).length)
+		//console.log("START")
 		for (let idx_GQ = 0; idx_GQ < graphql_Distributor.length; idx_GQ++) {
 			for (let idx_M_o = 0; idx_M_o < data.length; idx_M_o++) {
-				console.log(idx_M_o)
-				console.log(data[idx_M_o])
-				console.log()
+				//console.log(idx_M_o)
+				//console.log(data[idx_M_o].nombre_distribuidor)
+				//console.log()
+				/*
+				mongo | graphql
+				col     col
+				col     per
+				col
+				per
+				per				
+				*/
+				//console.log(typeof(data[idx_M_o]))
 				if (data[idx_M_o].nombre_distribuidor === graphql_Distributor[idx_GQ].nombre_distribuidor) {
-					console.log(data[idx_M_o].nombre_distribuidor)
-					if (JSON.stringify(data[idx_M_o].nombre_distribuidor) !== JSON.stringify(graphql_Distributor[idx_GQ].nombre_distribuidor)) {
+					//console.log(JSON.stringify(data[idx_M_o]))
+					//console.log(JSON.stringify(graphql_Distributor[idx_GQ]))	
+					//console.log("data status: ", data[idx_M_o].Status_distribuidor)
+					//console.log("graph status: ", graphql_Distributor[idx_GQ].Status_distribuidor)
+					if (data[idx_M_o].Status_distribuidor !== graphql_Distributor[idx_GQ].Status_distribuidor) {
 						console.log("SON DIFERENTES")
-						await saveGraphql(graphql_Distributor[0]);
+						await saveGraphql(graphql_Distributor[idx_GQ]);
 					} else {
 						setTimeout(function () {
 							console.log("SON IGUALES")
-							updateGraphql(graphql_Distributor[0]);
+							updateGraphql(graphql_Distributor[idx_GQ]);
 						}, 3000);
 					}
+					break;
 				}
 			}
 		}
@@ -100,7 +118,7 @@ const start = async () => {
 				console.log('Successfully wrote file')
 			}
 		})*/
-	});
+	}).sort({ updatedAt: -1 });
 
 
 	//await saveOscann(Model_Oscann);
@@ -133,7 +151,9 @@ start();
 //model_oscann.collection.insertOne(Model_Oscann)
 
 //console.log(model_oscann.find({ ID: '101' }))
+//saveGraphql(graphql_Distributor[0])
 
-//model_distribuidor.collection.insertMany(Model_Distributor);
+
+//model_distribuidor.collection.insertMany(graphql_Distributor);
 
 const Cron = require('./Cron/Cron');

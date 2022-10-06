@@ -59,7 +59,7 @@ function Sidebar() {
                                         {loop1.Hospitales.map((loop2) => (
                                         <SubMenu  title={loop2.hospital_name}icon= {<IoMdDisc  className='mySubIcon2' style={{color: 'green'}}/> }  >
                                             {loop2.Oscann.map((loop3) => (
-                                                <div className='Hola' ><MenuItem icon= {<IoMdDisc  className='iconoOscanns' style={{color: 'red'}} />}><div className='namesOscann'><Link to={`/Oscann/${loop3.ID}/${loop3.NAME}/${loop2.hospital_name}/${loop1.DH_name}/${loop.nombre_distribuidor}`}style={{  color: 'inherit' }}>{loop3.NAME} </Link></div></MenuItem></div>
+                                                <div className='Hola' >{console.log(loop3.id)}<MenuItem icon= {<IoMdDisc  className='iconoOscanns' style={{color: 'red'}} />}><div className='namesOscann'><Link to={`/Oscann/${loop3.id_oscann}/${loop3.NAME}/${loop2.hospital_name}/${loop1.DH_name}/${loop.nombre_distribuidor}`}style={{  color: 'inherit' }}>{loop3.NAME} </Link></div></MenuItem></div>
                                             ))}
                                         </SubMenu>
                                         ))}    

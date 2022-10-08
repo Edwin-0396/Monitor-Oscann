@@ -12,7 +12,9 @@
 		"ledservice_status": "Fail",
 		"ledservice_value": "Fail",
 		"camera_status": "OK",
-		"camera_value": "OK"
+		"camera_value": "OK",
+		"vnc_conn": "129.39.70.0"
+
 	},
 	{
 		"id_oscann": 2,

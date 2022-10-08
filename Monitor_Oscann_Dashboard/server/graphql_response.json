@@ -1,21 +1,6 @@
 [
 	{
-		"max_oscann": [
-			0,
-			1,
-			2,
-			80,
-			60,
-			60,
-			80,
-			60,
-			60,
-			80,
-			92,
-			60
-		],
-		"max_status": 92,
-		"Status_distribuidor": "Activo",
+		"Status_distribuidor":"Activo",
 		"nombre_distribuidor": "Colombia",
 		"Distribuidores_hospitalarios": [
 			{
@@ -23,7 +8,7 @@
 				"MAX_HOSP": "",
 				"Hospitales": [
 					{
-						"MAX_OSC": "",
+						"MAX_OSC":"",
 						"hospital_name": "Santa ana",
 						"Oscann": [
 							{
@@ -34,7 +19,7 @@
 								"HD": "0",
 								"LED": 0,
 								"CAMERA": 0,
-								"Max_oscann": ""
+								"Max_oscann":""
 							},
 							{
 								"NAME": "Oscann_2",
@@ -163,7 +148,7 @@
 	},
 	{
 		"nombre_distribuidor": "Perú",
-		"Status_distribuidor": "Inactivo",
+		"Status_distribuidor":"Inactivo",
 		"Distribuidores_hospitalarios": [
 			{
 				"DH_name": "eps_regional1",
@@ -306,21 +291,7 @@
 					}
 				]
 			}
-		],
-		"max_oscann": [
-			80,
-			60,
-			60,
-			80,
-			60,
-			60,
-			81,
-			60,
-			60,
-			80,
-			60,
-			60
-		],
-		"max_status": 81
+		]
 	}
 ]
+

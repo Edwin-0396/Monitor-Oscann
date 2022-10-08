@@ -52,6 +52,18 @@ function Sidebar() {
                     <Menu>
                         <div className='mennu2'>
                         {records.map((loop) => (
+/*
+ {records.map((loop) => (
+    {loop.Distribuidores_hospitalarios.map((loop1) => (
+        {loop1.Hospitales.map((loop2) => (
+            {loop2.Oscann.map((loop3) => (
+                loop3.max.status
+                ))}
+            ))}
+        ))}
+    ))}
+*/
+                            
                             <div className='Menu'>
                                 <SubMenu className='nameDis' title={loop.nombre_distribuidor} icon= {<IoMdDisc className='myIcon' style={{color: 'red'}} />}>
                                 {loop.Distribuidores_hospitalarios.map((loop1) => (

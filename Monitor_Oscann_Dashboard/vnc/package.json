@@ -3,5 +3,3 @@
     "react-vnc": "^0.5.4"
   }
 }
-
-//SKIP_PREFLIGHT_CHECK=true > .env

@@ -1,7 +1,5 @@
 [
 	{
-		"max_oscann" : [],
-		"max_status":"number",
 		"Status_distribuidor":"Activo",
 		"nombre_distribuidor": "Colombia",
 		"Distribuidores_hospitalarios": [

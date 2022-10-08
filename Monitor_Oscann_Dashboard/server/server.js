@@ -8,7 +8,9 @@ const model_oscann = require('./db/models/model_oscann');
 const dbo = require("./db/conn");
 const Model_Oscann = require("./model_oscann.json");
 const graphql_Distributor = require("./graphql_distributor.json");
-const port = process.env.PORT || 4500;
+const port = process.env.PORT || 4600;
+
+const Cron = require('./Cron/Cron');
 
 const app = express();
 app.use(cors())
@@ -76,4 +78,4 @@ const updateGraphql = async (distribuidor_update) => {
 //model_oscann.collection.insertOne(Model_Oscann)
 //model_distribuidor.collection.insertMany(Model_Oscann);
 
-const Cron = require('./Cron/Cron');
+

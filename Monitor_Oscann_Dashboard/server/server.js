@@ -8,6 +8,7 @@ const model_oscann = require('./db/models/model_oscann');
 const dbo = require("./db/conn");
 const Model_Oscann = require("./model_oscann.json");
 const graphql_Distributor = require("./graphql_distributor.json");
+//const graphql_Response = require("./graphql_response.json");
 const port = process.env.PORT || 4600;
 
 const Cron = require('./Cron/Cron');

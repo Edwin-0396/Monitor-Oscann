@@ -18,8 +18,7 @@
 								"RAM": "0",
 								"HD": "0",
 								"LED": 0,
-								"CAMERA": 0,
-								"Max_oscann":""
+								"CAMERA": 0
 							},
 							{
 								"NAME": "Oscann_2",

@@ -1,14 +1,58 @@
 [
 	{
+		"Max_Oscann": [
+			0,
+			1,
+			2,
+			2,
+			1,
+			2,
+			2,
+			1,
+			2,
+			3,
+			2,
+			3,
+			1,
+			2,
+			3,
+			0,
+			2,
+			1,
+			2,
+			1,
+			2,
+			2,
+			2,
+			1
+		],
+		"Max_Hospital": [
+			2,
+			2,
+			2,
+			3,
+			3,
+			2,
+			2,
+			2
+		],
+		"Max_Dist_Hosp": [
+			2,
+			3,
+			3,
+			2
+		],
+		"Max_Distribuidor": [
+			3,
+			3
+		],
 		"Status_distribuidor": "Activo",
 		"nombre_distribuidor": "Colombia",
 		"Distribuidores_hospitalarios": [
 			{
 				"DH_name": "eps_regional1",
-				"MAX_HOSP": "",
 				"Hospitales": [
 					{
-						"MAX_OSC": "",
 						"hospital_name": "Santa ana",
 						"Oscann": [
 							{
@@ -143,22 +187,7 @@
 					}
 				]
 			}
-		],
-		"max_oscann": [
-			0,
-			1,
-			2,
-			2,
-			1,
-			2,
-			2,
-			1,
-			2,
-			3,
-			2,
-			3
-		],
-		"max_status": 3
+		]
 	},
 	{
 		"nombre_distribuidor": "Perú",
@@ -306,7 +335,19 @@
 				]
 			}
 		],
-		"max_oscann": [
+		"Max_Oscann": [
+			0,
+			1,
+			2,
+			2,
+			1,
+			2,
+			2,
+			1,
+			2,
+			3,
+			2,
+			3,
 			1,
 			2,
 			3,
@@ -320,6 +361,25 @@
 			2,
 			1
 		],
-		"max_status": 3
+		"Max_Hospital": [
+			2,
+			2,
+			2,
+			3,
+			3,
+			2,
+			2,
+			2
+		],
+		"Max_Dist_Hosp": [
+			2,
+			3,
+			3,
+			2
+		],
+		"Max_Distribuidor": [
+			3,
+			3
+		]
 	}
 ]

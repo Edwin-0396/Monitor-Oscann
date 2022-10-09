@@ -1,107 +1,91 @@
-main{
-  margin-top: 50px;
-  width: 100%;
-  background-image: url("../images/aura-products-oscann-bw.png");
+main {
+  background-image: url('../images/aura-products-oscann-bw.png');
+  background-position: center;
   width: 70em;
   height: 45em;
   align-content: center;
   background-origin: content-box;
   background-repeat: no-repeat;
-  
 }
-  
-  header h1 {
+
+header h3 {
+  font-family: Arial Rounded MT Bold, Monaco;
   border: 2px gray solid;
-  background-color: #262629;
+  background-color: #212529;
   color: white;
-  border-radius: 5px;
+  border-radius: 15px;
   justify-content: center;
   display: flex;
   box-sizing: border-box;
   width: 700px;
   margin-left: 210px;
-  
-  }
-  header p {
   margin-top: 50px;
-  justify-content: center;
-  display: flex;
-  font-size: 25px;
-  
-  }
+}
 
-  table {
-    margin-top: 30px;
-    height: 400px;
-    justify-content: center;
-    align-content: center;
-    margin-left:210px
-  }
+header p {
+  margin-top: 30px;
+  justify-content: center;
+  font-size: 22px;
+  border: 2px gray solid;
+  background-color: #212529;
+  color: white;
+  border-radius: 15px;
+  width: 700px;
+  display: flex;
+  box-sizing: border-box;
+  margin-left: 210px;
+  margin-bottom: 50px;
+}
+
+table {
+  justify-content: center;
+  align-content: center;
+  height: 400px;
+}
 
 .tablesize {
   width: 700px;
+  height: 420px;
+  border-radius: 15px;
+  border: 10px solid;
+  margin-left: 210px;
 }
 
-  th,
-  td {
-    border: 1px solid;
-    padding: 8px;
-    text-align: center,
-    
-  }
-  
-  tr {
-    border: 2px solid #000000;
-    text-align: center;
-    padding: 8px;
-    background-color: rgba(43, 141, 226, 0.217);
-    
-  }
-
-  th {
-    text-align: center;
-    background-color: rgba(43, 141, 226, 0.217);
-    
-  }
-
-  td {
-    text-align: center;
-    
-  }
-
-.gray {
-  background-color: rgba(243, 243, 243, 0.08);
+th,
+td {
+  text-align: center;
 }
 
-button{
-  border: none;
+tr {
+  text-align: center;
+}
+
+button {
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.265);
-  
+  background-color: #212529;
+  border-radius: 30px;
+  color: white;
 }
 
 .Boton2 {
-  background-color: rgba(255, 255, 255, 0.097); 
-  color: black; 
-  border: 2px solid #000000;
+  font-family: Arial Rounded MT Bold, Monaco;
   display: inline-block;
   margin-left: 150px;
   margin-top: 30px;
 }
 
 .Boton1 {
-  background-color: rgba(255, 255, 255, 0.097); 
-  color: black; 
-  border: 2px solid #000000;
+  font-family: Arial Rounded MT Bold, Monaco;
   display: inline-block;
   margin-left: 370px;
   margin-top: 30px;
 }
+
 .iconref {
   font-size: 25px;
-  
+  cursor: pointer;
 }

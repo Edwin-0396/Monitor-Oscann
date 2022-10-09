@@ -13,8 +13,9 @@
 
 .ProSidebar {
     height: 100vh;
-    background-color: #1e1e21;
+    background-color: #212529;
     font-family: Arial Rounded MT Bold, Monaco;
+    position: relative;
     font-weight: bold;
     font-size: 400px;
     color: rgb(255, 255, 255);
@@ -24,39 +25,29 @@
 
 .Menu {
     font-family: Arial Rounded MT Bold, Monaco;
-    text-align: left;
-    display: flex;
-    flex-flow: column wrap;
-    align-content:flex-start;
-
 }
 
 .myIcon {
     font-size: 35px;
-    display: flex;
-    flex-flow: column wrap;
-    align-content:flex-start;
-    
 }
 
-.mySubIcon {
+.mySubIcon1 {
     font-size: 35px;
-    display: flex;
+}
 
-    left: 500px;
+.mySubIcon2 {
+    font-size: 35px;
 }
 
 .iconoOscanns {
     font-size: 35px;
-
 }
-
 
 .Hola {
-    right: 66px;
-    position: relative;
+    right: 42px;
 }
 
-.namesOscann {
-    margin-left: 90px;
+.searchContainer {
+    font-size: large;
+    margin-left: 25px;
 }

@@ -34,7 +34,7 @@ router.get('/getAll', async (req, res) => {
 //Get by ID Method
 router.get('/getOne/:id', async (req, res) => {
     try {
-        const data = await  model_oscann.findOne({ ID: req.params.id.toString() });
+        const data = await  model_oscann.findOne({ id_oscann: req.params.id.toString() });
         res.json(data)
     }
     catch (error) {

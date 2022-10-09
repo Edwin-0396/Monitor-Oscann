@@ -14,23 +14,23 @@ import {IoMdRefresh} from 'react-icons/io';
     }, [id])
 
     async function getRecords() {
-      const response = await fetch(`http://localhost:4600/api/getOne/${id}`);
+      const response = await fetch(`http://localhost:4500/api/getOne/${id}`);
       const oscanns = await response.json();
       setRecords(oscanns)
     }
 
-    console.log(name)
+    console.log(id)
     return (
       <div className='appContainer'>
         <main className='OscannMain'>
           <header>
-          <h1>Panel Information / Action</h1> {console.log(nombre_distribuidor)}
-          <p><b>{name}&emsp;&emsp;{">"}&emsp;&emsp;{Hospital}&emsp;&emsp;{">"}&emsp;&emsp;{DistribuidorHospital}&emsp;&emsp;{">"}&emsp;&emsp;{nombre_distribuidor}</b></p>
+          <h3>Panel Information / Action</h3> {console.log(nombre_distribuidor)}
+          <p><b>{nombre_distribuidor}&emsp;{">"}&emsp;{DistribuidorHospital}&emsp;{">"}&emsp;{Hospital}&emsp;{">"}&emsp;{name}</b></p>
         </header>
         <div className='tablesize'>
-        <table class="table table-dark table-striped ">
+        <table class="table table-dark table-hover table-striped">
           <thead >
-            <tr>
+            <tr class="table-dark">
               <th>Status</th>
               <th>Element</th>
               <th>Value</th>
@@ -39,41 +39,41 @@ import {IoMdRefresh} from 'react-icons/io';
           </thead>
           <tbody >
             <>
-            <tr className='gray' >
+            <tr className='gray' class="table-active">
               <td>{records.network_status}</td>
               <td>Network</td> 
               <td>{records.network_value}</td>
               <td></td>
             </tr>
-            <tr>
+            <tr class="table-active">
               <td>{records.ram_status}</td>
               <td>RAM</td> 
               <td>{records.ram_value}</td>
               <td></td>
             </tr>
-            <tr className='gray'>
+            <tr className='gray' class="table-active">
               <td>{records.cpu_status}</td>
               <td>CPU</td> 
               <td>{records.cpu_value}</td>
               <td></td>
             </tr>
-            <tr>
+            <tr class="table-active">
               <td>{records.drive_status}</td>
               <td>Drive (HD)</td> 
               <td>{records.drive_value}</td>
               <td></td>
             </tr>
-            <tr className='gray'>
+            <tr className='gray' class="table-active">
               <td>{records.ledservice_status}</td>
               <td>Led Service</td> 
               <td>{records.ledservice_value}</td>
               <td><IoMdRefresh className='iconref'/></td>
             </tr>
-            <tr>
+            <tr class="table-active">
               <td>{records.camera_status}</td>
               <td>camera Service (HD)</td> 
               <td>{records.camera_value}</td>
-              <td><IoMdRefresh className='iconref'/></td>
+              <td><IoMdRefresh className='iconref' /></td>
             </tr>
             </>
           </tbody>

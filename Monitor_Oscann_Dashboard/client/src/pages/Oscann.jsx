@@ -3,6 +3,7 @@ import '../images/aura.png';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {IoMdRefresh} from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 
   const Oscann = () => {
@@ -14,16 +15,9 @@ import {IoMdRefresh} from 'react-icons/io';
     }, [id])
 
     async function getRecords() {
-      const response = await fetch(`http://localhost:4500/api/getOne/${id}`);
+      const response = await fetch(`http://localhost:4600/api/getOne/${id}`);
       const oscanns = await response.json();
       setRecords(oscanns)
-    }
-
-    const [value,setValue] = useState();
-
-    const refresh = ()=>{
-        // it re-renders the component
-      setValue({});
     }
 
     return (
@@ -85,7 +79,7 @@ import {IoMdRefresh} from 'react-icons/io';
           </tbody>
         </table></div>
         <div className='Boton1'>
-        <button onClick={refresh}>Refresh</button>
+          <button >Refresh</button>
         </div>
         <div className='Boton2'>
         <button>VNC</button>
@@ -95,3 +89,4 @@ import {IoMdRefresh} from 'react-icons/io';
     )
   }
   export default Oscann
+//<Link to={`/Oscann/${id}/${name}/${Hospital}/${DistribuidorHospital}/${nombre_distribuidor}`}></Link>

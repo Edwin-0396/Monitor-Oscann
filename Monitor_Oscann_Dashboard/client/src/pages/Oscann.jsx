@@ -3,6 +3,7 @@ import '../images/aura.png';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {IoMdRefresh} from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 
   const Oscann = () => {
@@ -14,17 +15,16 @@ import {IoMdRefresh} from 'react-icons/io';
     }, [id])
 
     async function getRecords() {
-      const response = await fetch(`http://localhost:4500/api/getOne/${id}`);
+      const response = await fetch(`http://localhost:4600/api/getOne/${id}`);
       const oscanns = await response.json();
       setRecords(oscanns)
     }
 
-    console.log(id)
     return (
       <div className='appContainer'>
         <main className='OscannMain'>
           <header>
-          <h3>Panel Information / Action</h3> {console.log(nombre_distribuidor)}
+          <h3>Panel Information / Action</h3>
           <p><b>{nombre_distribuidor}&emsp;{">"}&emsp;{DistribuidorHospital}&emsp;{">"}&emsp;{Hospital}&emsp;{">"}&emsp;{name}</b></p>
         </header>
         <div className='tablesize'>
@@ -41,7 +41,7 @@ import {IoMdRefresh} from 'react-icons/io';
             <>
             <tr className='gray' class="table-active">
               <td>{records.network_status}</td>
-              <td>Network</td> 
+              <td>Network</td>
               <td>{records.network_value}</td>
               <td></td>
             </tr>
@@ -71,7 +71,7 @@ import {IoMdRefresh} from 'react-icons/io';
             </tr>
             <tr class="table-active">
               <td>{records.camera_status}</td>
-              <td>camera Service (HD)</td> 
+              <td>Camera Service (HD)</td> 
               <td>{records.camera_value}</td>
               <td><IoMdRefresh className='iconref' /></td>
             </tr>
@@ -79,7 +79,7 @@ import {IoMdRefresh} from 'react-icons/io';
           </tbody>
         </table></div>
         <div className='Boton1'>
-        <button>Refresh</button>
+          <button >Refresh</button>
         </div>
         <div className='Boton2'>
         <button>VNC</button>
@@ -89,3 +89,4 @@ import {IoMdRefresh} from 'react-icons/io';
     )
   }
   export default Oscann
+//<Link to={`/Oscann/${id}/${name}/${Hospital}/${DistribuidorHospital}/${nombre_distribuidor}`}></Link>

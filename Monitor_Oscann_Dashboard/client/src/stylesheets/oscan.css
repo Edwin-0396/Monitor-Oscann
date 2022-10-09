@@ -1,11 +1,10 @@
 main {
-  background-image: url('../images/aura-products-oscann-bw.png');
+  background-image: url('../images/oscann.png');
   background-position: center;
-  width: 70em;
+  width: 73em;
   height: 45em;
-  align-content: center;
-  background-origin: content-box;
   background-repeat: no-repeat;
+  background-size: 1185px;
 }
 
 header h3 {
@@ -69,6 +68,7 @@ button {
   background-color: #212529;
   border-radius: 30px;
   color: white;
+
 }
 
 .Boton2 {
@@ -88,4 +88,12 @@ button {
 .iconref {
   font-size: 25px;
   cursor: pointer;
+}
+
+.logoA  {
+  background-image: url('../images/Aura01.png');
+  width: 120px;
+  height: 55px;
+  background-size: 120px;
+  background-repeat: no-repeat;
 }

@@ -9,7 +9,7 @@ const dbo = require("./db/conn");
 const Model_Oscann = require("./model_oscann.json");
 const graphql_Distributor = require("./graphql_distributor.json");
 //const graphql_Response = require("./graphql_response.json");
-const port = process.env.PORT || 4600;
+const port = process.env.PORT;
 
 const Cron = require('./Cron/Cron');
 
@@ -46,7 +46,7 @@ const updateGraphql = async (distribuidor_update) => {
 	);
 };
 
-const start = async () => {
+//const start = async () => {
 
 	//Only test! - create new database
 	/*for (idx_gql = 0; idx_gql < graphql_Distributor.length; idx_gql++) {
@@ -73,7 +73,7 @@ const start = async () => {
 	}).sort({ updatedAt: -1 });
 };
 
-start();
+//start();
 
 //dbo.connectToServer.mongoose
 //model_oscann.collection.insertOne(Model_Oscann)

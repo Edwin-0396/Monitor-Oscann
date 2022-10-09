@@ -46,7 +46,7 @@ const updateGraphql = async (distribuidor_update) => {
 	);
 };
 
-//const start = async () => {
+const start = async () => {
 
 	//Only test! - create new database
 	for (idx_gql = 0; idx_gql < graphql_Distributor.length; idx_gql++) {
@@ -71,9 +71,9 @@ const updateGraphql = async (distribuidor_update) => {
 			}
 		}
 	}).sort({ updatedAt: -1 });*/
-//};
+};
 
-//start();
+start();
 
 //dbo.connectToServer.mongoose
 //model_oscann.collection.insertOne(Model_Oscann)

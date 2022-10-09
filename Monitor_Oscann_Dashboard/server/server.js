@@ -71,7 +71,7 @@ const updateGraphql = async (distribuidor_update) => {
 			}
 		}
 	}).sort({ updatedAt: -1 });
-//};
+};
 
 //start();
 

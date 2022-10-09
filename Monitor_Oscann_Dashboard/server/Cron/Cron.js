@@ -64,17 +64,10 @@ class Main {
       dict[idx_res].Max_Distribuidor = max_D
     }
     
-    
-
     /*console.log("Maximo de oscann: ",max_OSCAN)
     console.log("maximo de hospitales:  ",max_HOSP)
     console.log("maximo de dist_hosp: ",MAX_DH)
     console.log("maximo distr: " ,max_D)*/
-    //max_oscann = []
-    //
-
-
-    //console.log(max_dist)
 
     var dictstring = JSON.stringify(dict);
     var fs = require('fs');

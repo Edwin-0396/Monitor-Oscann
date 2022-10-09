@@ -1,5 +1,4 @@
 .sidebarall {
-    overflow: scroll initial;
     display: flex;
     height: 100vh;
     font-family: Monaco;
@@ -9,30 +8,46 @@
     margin-left:  -14em;
     position: relative;
     left: 15em;
+    text-align: justify;
 }
 
 .ProSidebar {
     height: 100vh;
-    background-color: rgb(255, 255, 255);
-    font-family: Monaco;
+    background-color: #212529;
+    font-family: Arial Rounded MT Bold, Monaco;
+    position: relative;
     font-weight: bold;
     font-size: 400px;
-    color: black;
+    color: rgb(255, 255, 255);
+    overflow-y:scroll;
+    text-align: justify;
 }
 
 .Menu {
-    font-family: Monaco;
-    font-weight: bold;
+    font-family: Arial Rounded MT Bold, Monaco;
 }
 
 .myIcon {
-    font-size: 35px;
+    font-size: 25px;
 }
 
-.mySubIcon {
-    font-size: 35px;
+.mySubIcon1 {
+    font-size: 25px;
+}
+
+.mySubIcon2 {
+    font-size: 25px;
 }
 
 .iconoOscanns {
-    font-size: 35px;
+    font-size: 25px;
+}
+
+.Hola {
+    right: 42px;
+}
+
+.searchContainer {
+    font-size: large;
+    margin-left: 25px;
 }

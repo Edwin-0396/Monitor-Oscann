@@ -1,66 +1,99 @@
-main{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+main {
+  background-image: url('../images/oscann.png');
+  background-position: center;
+  width: 73em;
+  height: 45em;
+  background-repeat: no-repeat;
+  background-size: 1185px;
 }
-.app-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 1rem;
-    margin-top:10px;
-    margin-left:10px;
-    align-content: center;
-    padding-top: 100px;
-  }
-  
-  table {
-    border-collapse: collapse;
-    margin: auto;
-    align-items: center;
-  }
-  
-  th,
-  td {
-    border: 1px solid #000000;
-    text-align: left;
-    padding: 8px;
-    text-align: center;
-  }
-  
-  tr {
-    border: 1px solid #000000;
-    text-align: center;
-    padding: 8px;
-    font-size: 32px;
-    width: 1000px;
-    height: fit-content;
-    text-align: center;
-  }
-  
-  th {
-    background-color: rgb(117, 201, 250);
-    text-align: center;
-  }
-  
-  td {
-    background-color: rgb(205, 235, 253);
-    text-align: center;
-  }
-  
-  form {
-    display: flex;
-    gap: 5px;
-  }
-  
-  form td:last-child {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
-  form * {
-    font-size: 28px;
-    
-  }
-  
+
+header h3 {
+  font-family: Arial Rounded MT Bold, Monaco;
+  border: 2px gray solid;
+  background-color: #212529;
+  color: white;
+  border-radius: 15px;
+  justify-content: center;
+  display: flex;
+  box-sizing: border-box;
+  width: 700px;
+  margin-left: 210px;
+  margin-top: 50px;
+}
+
+header p {
+  margin-top: 30px;
+  justify-content: center;
+  font-size: 22px;
+  border: 2px gray solid;
+  background-color: #212529;
+  color: white;
+  border-radius: 15px;
+  width: 700px;
+  display: flex;
+  box-sizing: border-box;
+  margin-left: 210px;
+  margin-bottom: 50px;
+}
+
+table {
+  justify-content: center;
+  align-content: center;
+  height: 400px;
+}
+
+.tablesize {
+  width: 700px;
+  height: 420px;
+  border-radius: 15px;
+  border: 10px solid;
+  margin-left: 210px;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+tr {
+  text-align: center;
+}
+
+button {
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #212529;
+  border-radius: 30px;
+  color: white;
+
+}
+
+.Boton2 {
+  font-family: Arial Rounded MT Bold, Monaco;
+  display: inline-block;
+  margin-left: 150px;
+  margin-top: 30px;
+}
+
+.Boton1 {
+  font-family: Arial Rounded MT Bold, Monaco;
+  display: inline-block;
+  margin-left: 370px;
+  margin-top: 30px;
+}
+
+.iconref {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.logoA  {
+  background-image: url('../images/Aura01.png');
+  width: 120px;
+  height: 55px;
+  background-size: 120px;
+  background-repeat: no-repeat;
+}

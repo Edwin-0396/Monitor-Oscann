@@ -9,7 +9,7 @@ const dbo = require("./db/conn");
 const Model_Oscann = require("./model_oscann.json");
 const graphql_Distributor = require("./graphql_distributor.json");
 //const graphql_Response = require("./graphql_response.json");
-const port = process.env.PORT || 4600;
+const port = process.env.PORT;
 
 const Cron = require('./Cron/Cron');
 
@@ -46,14 +46,14 @@ const updateGraphql = async (distribuidor_update) => {
 	);
 };
 
-const start = async () => {
+//const start = async () => {
 
 	//Only test! - create new database
-	for (idx_gql = 0; idx_gql < graphql_Distributor.length; idx_gql++) {
+	/*for (idx_gql = 0; idx_gql < graphql_Distributor.length; idx_gql++) {
 		await saveGraphql(graphql_Distributor[idx_gql]);
-	}
+	}*/
 
-	/*model_distribuidor.find({}, async function (err, data) {
+	model_distribuidor.find({}, async function (err, data) {
 		for (let idx_GQ = 0; idx_GQ < graphql_Distributor.length; idx_GQ++) {
 			for (let idx_M_o = 0; idx_M_o < data.length; idx_M_o++) {
 				if (data[idx_M_o].nombre_distribuidor === graphql_Distributor[idx_GQ].nombre_distribuidor) {
@@ -70,10 +70,10 @@ const start = async () => {
 				}
 			}
 		}
-	}).sort({ updatedAt: -1 });*/
-};
+	}).sort({ updatedAt: -1 });
+//};
 
-start();
+//start();
 
 //dbo.connectToServer.mongoose
 //model_oscann.collection.insertOne(Model_Oscann)

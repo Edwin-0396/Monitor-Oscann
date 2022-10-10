@@ -13,6 +13,7 @@ function Sidebar() {
     const URL = 'http://localhost:4600/api/getAll'
     const [records, setRecords] = useState([]);
     const [searchTerm, setSearchTerm] = useState("")
+    const [counter, setCounter] = useState(0)
 
     useEffect(() => {
         async function getRecords() {
@@ -44,6 +45,10 @@ function Sidebar() {
             }}></i>
         )
     }
+    let countDistribuidor = -1;
+    let countDistribuidorHospital = -1;
+    let countHospital = -1;
+    let countOscann = 0;
     return (
         <div>
             <ProSidebar>
@@ -72,28 +77,26 @@ function Sidebar() {
                                 }).map((loop) => (
                                     <div className='Menu'>
                                         <SubMenu className='nameDis' title={loop.nombre_distribuidor} icon={
-                                                    loop.max_status == 0 ? <FaRegThumbsUp className='myIcon' style={{ color: 'green' }} />
-                                                    : loop.max_status == 1 ? <IoMdAlarm className='myIcon' style={{ color: 'orange' }} />
-                                                    : <IoMdCloseCircleOutline className='myIcon' style={{ color: 'red' }} />
+                                                loop.Maximo_Distributor  == 0 ? <FaRegThumbsUp className='myIcon' style={{ color: 'green' }} />
+                                                : loop.Maximo_Distributor == 1 ? <IoMdAlarm className='myIcon' style={{ color: 'orange' }} />
+                                                : <IoMdCloseCircleOutline className='myIcon' style={{ color: 'red' }} />
                                                 }>
                                             {loop.Distribuidores_hospitalarios.map((loop1) => (
                                                 <SubMenu title={loop1.DH_name} icon={
-                                                    loop.max_status == 0 ? <FaRegThumbsUp className='mySubIcon1' style={{ color: 'green' }} />
-                                                    : loop.max_status == 1 ? <IoMdAlarm className='mySubIcon1' style={{ color: 'orange' }} />
+                                                    loop1.Maximo_Dist_Hosp == 0 ? <FaRegThumbsUp className='mySubIcon1' style={{ color: 'green' }} />
+                                                    : loop1.Maximo_Dist_Hosp == 1 ? <IoMdAlarm className='mySubIcon1' style={{ color: 'orange' }} />
                                                     : <IoMdCloseCircleOutline className='mySubIcon1' style={{ color: 'red' }} />
                                                 }>
                                                     {loop1.Hospitales.map((loop2) => (
                                                         <SubMenu title={loop2.hospital_name} icon={
-                                                            loop.max_status == 0 ? iconColorGreen
-                                                            : loop.max_status == 1 ? iconColorOrange
+                                                            loop2.Maximo_Hospital == 0 ? iconColorGreen
+                                                            : loop2.Maximo_Hospital == 1 ? iconColorOrange
                                                             : iconColorRed
-                                                        }> 
-                                                            {loop2.Oscann.map((loop3) => (
-                                                                <div className='Hola' > <MenuItem icon={
-                                                                    loop3.RAM == 0 ? iconColorGreen
-                                                                    : loop3.RAM == 1 ? iconColorOrange
-                                                                    : iconColorRed
-                                                                }>
+                                                        }>
+                                                            {loop2.Oscann.map((loop3) =>( 
+                                                                <div className='Hola' ><MenuItem icon={
+                                                                    (loop3.Maximo_oscann == 0 ? iconColorGreen : (loop3.Maximo_oscann == 1 ? iconColorOrange : iconColorRed))
+                                                                    }>
                                                                     <div className='namesOscann'>
                                                                          <Link to={`/Oscann/${loop3.id_oscann}/${loop3.NAME}/${loop2.hospital_name}/${loop1.DH_name}/${loop.nombre_distribuidor}`} style={{ color: 'inherit' }}>{loop3.NAME} </Link>
                                                                     </div></MenuItem>

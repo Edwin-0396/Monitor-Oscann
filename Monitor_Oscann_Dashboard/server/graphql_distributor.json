@@ -1,9 +1,5 @@
 [
 	{
-		"Max_Oscann": [],
-		"Max_Hospital": [],
-		"Max_Dist_Hosp": [],
-		"Max_Distribuidor": [],
 		"Status_distribuidor": "Activo",
 		"nombre_distribuidor": "Colombia",
 		"Distribuidores_hospitalarios": [

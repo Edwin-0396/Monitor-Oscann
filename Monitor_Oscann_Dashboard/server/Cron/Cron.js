@@ -35,29 +35,37 @@ class Main {
             var arrayOfNumbers = arr.map(Number);
             var arraynumbers = arrayOfNumbers.slice(2, 7);
             max_oscann_D = Math.max(...arraynumbers);
+            dict[idx_res].Distribuidores_hospitalarios[idx__dh].Hospitales[id_H].Oscann[id_Oscann].Maximo_oscann = max_oscann_D
+            
             max_Oscann.push(max_oscann_D)
             max_OSCAN.push(max_oscann_D)
-             
           }
           max_oscann_H = Math.max(...max_OSCAN);
+          dict[idx_res].Distribuidores_hospitalarios[idx__dh].Hospitales[id_H].Maximo_Hospital = max_oscann_H
+          
           max_H.push(max_oscann_H)
           max_OSCAN = []
           max_HOSP.push(max_oscann_H)
         }
         max_oscann_DH = Math.max(...max_HOSP);
+        dict[idx_res].Distribuidores_hospitalarios[idx__dh].Maximo_Dist_Hosp = max_oscann_DH
+       
         max_DH.push(max_oscann_DH) 
         max_HOSP = []
         MAX_DH.push(max_oscann_DH)
       }
-      dict[idx_res].Max_Oscann = max_Oscann
+      //dict[idx_res].Max_Oscann = max_Oscann
       max_Oscann = []
-      dict[idx_res].Max_Hospital = max_H
+      //dict[idx_res].Max_Hospital = max_H
       max_H = []
-      dict[idx_res].Max_Dist_Hosp = max_DH  
+      //dict[idx_res].Max_Dist_Hosp = max_DH 
+      
       max_oscann_D = Math.max(...max_DH)
+      dict[idx_res].Maximo_Distributor = max_oscann_D
+      
       max_D.push(max_oscann_D)
       max_DH = []
-      dict[idx_res].Max_Distribuidor = max_D
+      //dict[idx_res].Max_Distribuidor = max_D
       max_D = []
     }
     
@@ -67,6 +75,6 @@ class Main {
   }
 }
 
-cron.schedule("* * * * *", () => {
+cron.schedule("* * * * * *", () => {
   Main.getHoroscope();
 });

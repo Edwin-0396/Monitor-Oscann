@@ -1,32 +1,9 @@
 [
 	{
-		"Max_Oscann": [
-			0,
-			1,
-			2,
-			2,
-			1,
-			2,
-			2,
-			1,
-			2,
-			3,
-			2,
-			3
-		],
-		"Max_Hospital": [
-			2,
-			2,
-			2,
-			3
-		],
-		"Max_Dist_Hosp": [
-			2,
-			3
-		],
-		"Max_Distribuidor": [
-			3
-		],
+		"Max_Oscann": [],
+		"Max_Hospital": [],
+		"Max_Dist_Hosp": [],
+		"Max_Distribuidor": [],
 		"Status_distribuidor": "Activo",
 		"nombre_distribuidor": "Colombia",
 		"Distribuidores_hospitalarios": [
@@ -43,7 +20,8 @@
 								"RAM": "0",
 								"HD": "0",
 								"LED": 0,
-								"CAMERA": 0
+								"CAMERA": 0,
+								"Maximo_oscann": 0
 							},
 							{
 								"NAME": "Oscann_2",
@@ -52,7 +30,8 @@
 								"RAM": "1",
 								"HD": "1",
 								"LED": 0,
-								"CAMERA": 1
+								"CAMERA": 1,
+								"Maximo_oscann": 1
 							},
 							{
 								"NAME": "Oscann_3",
@@ -61,9 +40,11 @@
 								"RAM": "0",
 								"HD": "0",
 								"LED": 0,
-								"CAMERA": 0
+								"CAMERA": 0,
+								"Maximo_oscann": 2
 							}
-						]
+						],
+						"Maximo_Hospital": 2
 					},
 					{
 						"hospital_name": "Infantil",
@@ -75,7 +56,8 @@
 								"RAM": "2",
 								"HD": "0",
 								"LED": 0,
-								"CAMERA": 1
+								"CAMERA": 1,
+								"Maximo_oscann": 2
 							},
 							{
 								"NAME": "Oscann_2",
@@ -84,7 +66,8 @@
 								"RAM": "0",
 								"HD": "1",
 								"LED": 0,
-								"CAMERA": 1
+								"CAMERA": 1,
+								"Maximo_oscann": 1
 							},
 							{
 								"NAME": "Oscann_3",
@@ -93,11 +76,14 @@
 								"RAM": "1",
 								"HD": "1",
 								"LED": 0,
-								"CAMERA": 1
+								"CAMERA": 1,
+								"Maximo_oscann": 2
 							}
-						]
+						],
+						"Maximo_Hospital": 2
 					}
-				]
+				],
+				"Maximo_Dist_Hosp": 2
 			},
 			{
 				"DH_name": "eps_regional2",
@@ -112,7 +98,8 @@
 								"RAM": "2",
 								"HD": "0",
 								"LED": 0,
-								"CAMERA": 1
+								"CAMERA": 1,
+								"Maximo_oscann": 2
 							},
 							{
 								"NAME": "Oscann_2",
@@ -121,7 +108,8 @@
 								"RAM": "1",
 								"HD": "0",
 								"LED": 1,
-								"CAMERA": 1
+								"CAMERA": 1,
+								"Maximo_oscann": 1
 							},
 							{
 								"NAME": "Oscann_3",
@@ -130,9 +118,11 @@
 								"RAM": "0",
 								"HD": "2",
 								"LED": 1,
-								"CAMERA": 0
+								"CAMERA": 0,
+								"Maximo_oscann": 2
 							}
-						]
+						],
+						"Maximo_Hospital": 2
 					},
 					{
 						"hospital_name": "Geriátrico",
@@ -144,7 +134,8 @@
 								"RAM": "2",
 								"HD": "2",
 								"LED": 0,
-								"CAMERA": 0
+								"CAMERA": 0,
+								"Maximo_oscann": 3
 							},
 							{
 								"NAME": "Oscann_2",
@@ -153,7 +144,8 @@
 								"RAM": "1",
 								"HD": "2",
 								"LED": 0,
-								"CAMERA": 0
+								"CAMERA": 0,
+								"Maximo_oscann": 2
 							},
 							{
 								"NAME": "Oscann_3",
@@ -162,13 +154,17 @@
 								"RAM": "0",
 								"HD": "0",
 								"LED": 0,
-								"CAMERA": 1
+								"CAMERA": 1,
+								"Maximo_oscann": 3
 							}
-						]
+						],
+						"Maximo_Hospital": 3
 					}
-				]
+				],
+				"Maximo_Dist_Hosp": 3
 			}
-		]
+		],
+		"Maximo_Distributor": 3
 	},
 	{
 		"nombre_distribuidor": "Perú",
@@ -188,7 +184,8 @@
 								"RAM": "0",
 								"HD": "1",
 								"LED": 0,
-								"CAMERA": 1
+								"CAMERA": 1,
+								"Maximo_oscann": 1
 							},
 							{
 								"NAME": "Oscann_2",
@@ -198,7 +195,8 @@
 								"RAM": "0",
 								"HD": "2",
 								"LED": 1,
-								"CAMERA": 1
+								"CAMERA": 1,
+								"Maximo_oscann": 2
 							},
 							{
 								"NAME": "Oscann_3",
@@ -208,9 +206,11 @@
 								"RAM": "2",
 								"HD": "3",
 								"LED": 1,
-								"CAMERA": 1
+								"CAMERA": 1,
+								"Maximo_oscann": 3
 							}
-						]
+						],
+						"Maximo_Hospital": 3
 					},
 					{
 						"hospital_name": "Infantil",
@@ -222,7 +222,8 @@
 								"RAM": "0",
 								"HD": "0",
 								"LED": 0,
-								"CAMERA": 0
+								"CAMERA": 0,
+								"Maximo_oscann": 0
 							},
 							{
 								"NAME": "Oscann_2",
@@ -231,7 +232,8 @@
 								"RAM": "1",
 								"HD": "1",
 								"LED": 1,
-								"CAMERA": 1
+								"CAMERA": 1,
+								"Maximo_oscann": 2
 							},
 							{
 								"NAME": "Oscann_3",
@@ -240,11 +242,14 @@
 								"RAM": "0",
 								"HD": "0",
 								"LED": 0,
-								"CAMERA": 0
+								"CAMERA": 0,
+								"Maximo_oscann": 1
 							}
-						]
+						],
+						"Maximo_Hospital": 2
 					}
-				]
+				],
+				"Maximo_Dist_Hosp": 3
 			},
 			{
 				"DH_name": "eps_regional2",
@@ -259,7 +264,8 @@
 								"RAM": "0",
 								"HD": "2",
 								"LED": 1,
-								"CAMERA": 1
+								"CAMERA": 1,
+								"Maximo_oscann": 2
 							},
 							{
 								"NAME": "Oscann_2",
@@ -268,7 +274,8 @@
 								"RAM": "0",
 								"HD": "1",
 								"LED": 1,
-								"CAMERA": 1
+								"CAMERA": 1,
+								"Maximo_oscann": 1
 							},
 							{
 								"NAME": "Oscann_3",
@@ -277,9 +284,11 @@
 								"RAM": "2",
 								"HD": "2",
 								"LED": 1,
-								"CAMERA": 1
+								"CAMERA": 1,
+								"Maximo_oscann": 2
 							}
-						]
+						],
+						"Maximo_Hospital": 2
 					},
 					{
 						"hospital_name": "Geriátrico",
@@ -291,7 +300,8 @@
 								"RAM": "0",
 								"HD": "2",
 								"LED": 0,
-								"CAMERA": 0
+								"CAMERA": 0,
+								"Maximo_oscann": 2
 							},
 							{
 								"NAME": "Oscann_2",
@@ -300,7 +310,8 @@
 								"RAM": "2",
 								"HD": "0",
 								"LED": 0,
-								"CAMERA": 0
+								"CAMERA": 0,
+								"Maximo_oscann": 2
 							},
 							{
 								"NAME": "Oscann_3",
@@ -309,39 +320,16 @@
 								"RAM": "0",
 								"HD": "0",
 								"LED": 1,
-								"CAMERA": 1
+								"CAMERA": 1,
+								"Maximo_oscann": 1
 							}
-						]
+						],
+						"Maximo_Hospital": 2
 					}
-				]
+				],
+				"Maximo_Dist_Hosp": 2
 			}
 		],
-		"Max_Oscann": [
-			1,
-			2,
-			3,
-			0,
-			2,
-			1,
-			2,
-			1,
-			2,
-			2,
-			2,
-			1
-		],
-		"Max_Hospital": [
-			3,
-			2,
-			2,
-			2
-		],
-		"Max_Dist_Hosp": [
-			3,
-			2
-		],
-		"Max_Distribuidor": [
-			3
-		]
+		"Maximo_Distributor": 3
 	}
 ]

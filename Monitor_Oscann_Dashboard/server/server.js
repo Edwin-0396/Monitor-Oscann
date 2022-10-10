@@ -13,6 +13,7 @@ const port = process.env.PORT;
 
 const Cron = require('./Cron/Cron');
 
+
 const app = express();
 app.use(cors())
 app.use(express.json());
@@ -82,10 +83,6 @@ model_distribuidor.find({}, async function (err, data) {
 	}
 }).sort({ updatedAt: -1 });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> Edwin
 
 //dbo.connectToServer.mongoose
 //model_oscann.collection.insertOne(Model_Oscann)

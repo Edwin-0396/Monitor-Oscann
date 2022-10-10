@@ -14,6 +14,7 @@ function App() {
           <Route path='/' element={<Home />}/>
           <Route path='/Oscann' element={<Oscann />}/>
           <Route path='/Oscann/:id/:name/:Hospital/:DistribuidorHospital/:nombre_distribuidor' element={<Oscann />}/>
+          <Route path='/Vnc'/>
         </Routes>
     </div>
   );

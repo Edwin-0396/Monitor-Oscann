@@ -20,16 +20,16 @@
 							{
 								"NAME": "Oscann_2",
 								"id_oscann": 2,
-								"CPU": "1",
-								"RAM": "1",
-								"HD": "1",
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "0",
 								"LED": 0,
-								"CAMERA": 1
+								"CAMERA": 0
 							},
 							{
 								"NAME": "Oscann_3",
 								"id_oscann": 3,
-								"CPU": "2",
+								"CPU": "0",
 								"RAM": "0",
 								"HD": "0",
 								"LED": 0,
@@ -44,9 +44,9 @@
 								"NAME": "Oscann_1",
 								"id_oscann": 4,
 								"CPU": "1",
-								"RAM": "2",
-								"HD": "0",
-								"LED": 0,
+								"RAM": "1",
+								"HD": "1",
+								"LED": 1,
 								"CAMERA": 1
 							},
 							{
@@ -61,10 +61,10 @@
 							{
 								"NAME": "Oscann_3",
 								"id_oscann": 6,
-								"CPU": "2",
+								"CPU": "1",
 								"RAM": "1",
 								"HD": "1",
-								"LED": 0,
+								"LED": 1,
 								"CAMERA": 1
 							}
 						]
@@ -80,29 +80,29 @@
 							{
 								"NAME": "Oscann_1",
 								"id_oscann": 7,
-								"CPU": "1",
+								"CPU": "2",
 								"RAM": "2",
-								"HD": "0",
-								"LED": 0,
-								"CAMERA": 1
+								"HD": "2",
+								"LED": 2,
+								"CAMERA": 2
 							},
 							{
 								"NAME": "Oscann_2",
 								"id_oscann": 8,
-								"CPU": "0",
-								"RAM": "1",
-								"HD": "0",
-								"LED": 1,
-								"CAMERA": 1
+								"CPU": "2",
+								"RAM": "2",
+								"HD": "2",
+								"LED": 2,
+								"CAMERA": 2
 							},
 							{
 								"NAME": "Oscann_3",
 								"id_oscann": 9,
-								"CPU": "0",
-								"RAM": "0",
+								"CPU": "2",
+								"RAM": "2",
 								"HD": "2",
-								"LED": 1,
-								"CAMERA": 0
+								"LED": 2,
+								"CAMERA": 2
 							}
 						]
 					},
@@ -112,9 +112,9 @@
 							{
 								"NAME": "Oscann_1",
 								"id_oscann": 10,
-								"CPU": "3",
-								"RAM": "2",
-								"HD": "2",
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "0",
 								"LED": 0,
 								"CAMERA": 0
 							},
@@ -123,18 +123,18 @@
 								"id_oscann": 11,
 								"CPU": "1",
 								"RAM": "1",
-								"HD": "2",
-								"LED": 0,
-								"CAMERA": 0
+								"HD": "1",
+								"LED": 1,
+								"CAMERA": 1
 							},
 							{
 								"NAME": "Oscann_3",
 								"id_oscann": 12,
-								"CPU": "3",
-								"RAM": "0",
-								"HD": "0",
-								"LED": 0,
-								"CAMERA": 1
+								"CPU": "2",
+								"RAM": "2",
+								"HD": "2",
+								"LED": 2,
+								"CAMERA": 2
 							}
 						]
 					}

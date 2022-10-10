@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {IoMdRefresh} from 'react-icons/io';
 import { Link } from 'react-router-dom';
+import { default as Vnc } from './Vnc';
 
 
   const Oscann = () => {
@@ -82,7 +83,7 @@ import { Link } from 'react-router-dom';
         <Link to={`/Oscann/${id}/${name}/${Hospital}/${DistribuidorHospital}/${nombre_distribuidor}`}><button>Refresh</button></Link>
         </div>
         <div className='Boton2'>
-        <button>VNC</button>
+        <Link to={`/Vnc`}><button>VNC</button></Link>
         </div>
         </main>
       </div>

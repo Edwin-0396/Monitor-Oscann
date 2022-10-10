@@ -1,12 +1,8 @@
 const mongoose = require('mongoose');
 
 const dataSchema = new mongoose.Schema({
-    "Max_Oscann" : [Number],
-    "Max_Hospital" : [Number],
-    "Max_Dist_Hosp": [Number],
-    "Max_Distribuidor": [Number],
     "nombre_distribuidor": { type: String, required: true },
-    "Status_distribuidor": { type: String, required: true },
+    "Maximo_Distributor": Number,
     "Distribuidores_hospitalarios": [Object]
   },{ timestamps: true })
 

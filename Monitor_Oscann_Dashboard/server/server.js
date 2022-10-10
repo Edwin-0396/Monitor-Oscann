@@ -71,12 +71,10 @@ const updateGraphql = async (distribuidor_update) => {
 			}
 		}
 	}).sort({ updatedAt: -1 });
-};
+//};
 
 //start();
 
 //dbo.connectToServer.mongoose
 //model_oscann.collection.insertOne(Model_Oscann)
 //model_distribuidor.collection.insertMany(Model_Oscann);
-
-

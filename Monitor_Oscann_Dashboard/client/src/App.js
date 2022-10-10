@@ -2,6 +2,7 @@ import './stylesheets/App.css';
 import Sidebar from './sidebar';
 import { Routes, Route } from 'react-router-dom';
 import { default as Oscann } from './pages/Oscann';
+import { default as Vnc } from './pages/Vnc';
 import './images/aura.png';
 import './stylesheets/oscan.css';
 import './images/aura.png'
@@ -14,6 +15,7 @@ function App() {
           <Route path='/' element={<Home />}/>
           <Route path='/Oscann' element={<Oscann />}/>
           <Route path='/Oscann/:id/:name/:Hospital/:DistribuidorHospital/:nombre_distribuidor' element={<Oscann />}/>
+          <Route path='/Vnc' element={<Vnc />}/>
         </Routes>
     </div>
   );

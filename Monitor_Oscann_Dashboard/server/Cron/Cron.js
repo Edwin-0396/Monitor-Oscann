@@ -75,6 +75,6 @@ class Main {
   }
 }
 
-cron.schedule("*/30 * * * *", () => {
+cron.schedule("* * * * *", () => {
   Main.getHoroscope();
 });

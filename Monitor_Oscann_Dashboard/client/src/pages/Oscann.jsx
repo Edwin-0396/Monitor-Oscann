@@ -79,14 +79,13 @@ import { Link } from 'react-router-dom';
           </tbody>
         </table></div>
         <div className='Boton1'>
-          <button >Refresh</button>
+        <Link to={`/Oscann/${id}/${name}/${Hospital}/${DistribuidorHospital}/${nombre_distribuidor}`}><button>Refresh</button></Link>
         </div>
         <div className='Boton2'>
-        <button>VNC</button>
+        <Link to={`/Vnc`}><button>VNC</button></Link>
         </div>
         </main>
       </div>
     )
   }
   export default Oscann
-//<Link to={`/Oscann/${id}/${name}/${Hospital}/${DistribuidorHospital}/${nombre_distribuidor}`}></Link>

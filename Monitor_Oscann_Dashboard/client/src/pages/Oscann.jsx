@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {IoMdRefresh} from 'react-icons/io';
 import { Link } from 'react-router-dom';
-import { default as Vnc } from './Vnc';
 
 
   const Oscann = () => {

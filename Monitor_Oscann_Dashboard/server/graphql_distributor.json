@@ -1,6 +1,5 @@
 [
 	{
-		"Status_distribuidor": "Activo",
 		"nombre_distribuidor": "Colombia",
 		"Distribuidores_hospitalarios": [
 			{
@@ -164,7 +163,6 @@
 	},
 	{
 		"nombre_distribuidor": "Perú",
-		"Status_distribuidor": "Inactivo",
 		"Distribuidores_hospitalarios": [
 			{
 				"DH_name": "eps_regional1",

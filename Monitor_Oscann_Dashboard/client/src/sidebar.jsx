@@ -5,7 +5,6 @@ import 'react-pro-sidebar/dist/css/styles.css';
 import './stylesheets/sidebar.css';
 import { IoMdDisc, IoMdAlarm, IoMdCloseCircleOutline } from 'react-icons/io';
 import {FaRegThumbsUp} from "@react-icons/all-files/fa/FaRegThumbsUp";
-
 import { Link } from 'react-router-dom';
 
 function Sidebar() {

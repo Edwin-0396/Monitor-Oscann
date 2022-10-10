@@ -1,0 +1,109 @@
+{
+  "name": "react-vnc",
+  "version": "0.5.4",
+  "description": "A React Component to connect to a websockified VNC client using noVNC.",
+  "author": "roerohan",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "source": "src/lib/index.tsx",
+  "typings": "dist/types/lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "keywords": [
+    "vnc",
+    "noVNC",
+    "react-vnc",
+    "websocket",
+    "websockify"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "dist/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roerohan/react-vnc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/roerohan/react-vnc/issues"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^12.20.7",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:lib": "rollup -c",
+    "lint": "eslint . --ext .ts --ext .js",
+    "lint:fix": "npm run lint -- --fix",
+    "prepare": "is-ci || husky install",
+    "prepack": "npm run build:lib",
+    "prepublishOnly": "cp package.json package.json.bak && node prepublish.js",
+    "postpublish": "mv package.json.bak package.json",
+    "submodule": "git submodule update --init --recursive"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/commit-analyzer": "^9.0.1",
+    "@semantic-release/git": "^10.0.0",
+    "@semantic-release/npm": "^8.0.0",
+    "@semantic-release/release-notes-generator": "^10.0.2",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.2.0",
+    "husky": "^7.0.0",
+    "is-ci": "^2.0.0",
+    "rollup": "^2.44.0",
+    "rollup-plugin-typescript2": "^0.32.1",
+    "semantic-release": "^18.0.0",
+    "typescript": "^4.5.5"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

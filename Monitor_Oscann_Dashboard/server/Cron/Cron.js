@@ -5,8 +5,8 @@ const Model = require('../db/models/model_distribuidor');
 const graphql_response = require("../graphql_response.json");
 
 class Main {
-  static async getHoroscope() {
-    //result_list = await http.get("/" + "").data; //endpoint from graphql API
+  static async get_summary_endpoint() {
+    //summary_endpoint = await http.get("/" + "").data; //endpoint from graphql API
 
     console.log("funciton Cron")
 
@@ -75,6 +75,6 @@ class Main {
   }
 }
 
-cron.schedule(" * * * * *", () => {
-  Main.getHoroscope();
+cron.schedule("*/30 * * * *", () => {
+  Main.get_summary_endpoint();
 });

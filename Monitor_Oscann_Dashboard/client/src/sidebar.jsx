@@ -3,7 +3,7 @@ import { CDBSidebarContent, CDBSidebarHeader } from 'cdbreact';
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import './stylesheets/sidebar.css';
-import { IoMdDisc, IoMdCloseCircleOutline } from 'react-icons/io';
+import { IoMdCloseCircleOutline } from 'react-icons/io';
 import {FaRegThumbsUp} from "@react-icons/all-files/fa/FaRegThumbsUp";
 import {TbAlertTriangle} from "react-icons/tb";
 
@@ -14,28 +14,26 @@ function Sidebar() {
     const URL = 'http://localhost:4600/api/getAll'
     const [records, setRecords] = useState([]);
     const [searchTerm, setSearchTerm] = useState("")
-    const [counter, setCounter] = useState(0)
+    const [idInterval, setIdInterval] = useState(null)
+
+    const getRecords = async () => {
+        const response = await fetch(URL);
+        const records = await response.json();
+        setRecords(records);
+    }
 
     useEffect(() => {
-        async function getRecords() {
-            const response = await fetch(URL);
-
-            if (!response.ok) {
-                const message = `An error occurred: ${response.statusText}`;
-                window.alert(message);
-                return;
-            }
-
-            const records = await response.json();
-            setRecords(records);
+        if(!idInterval & records & records.length){
+            let interval = setInterval(() => {
+                getRecords();
+            }, 1000);
+            setIdInterval(interval);
         }
-        /*setInterval(() => {
-            getRecords();
-            console.log(getRecords)
-        }, 1000);*/
-        
-        return;
-    }, [records.length]);
+
+    }, [records, idInterval]);
+    useEffect(() => {
+        getRecords();
+    }, []);
 
     const iconColorGreen = <FaRegThumbsUp className='mySubIcon2' style={{ color: 'green' }} />
     const iconColorOrange = <TbAlertTriangle className='mySubIcon2' style={{ color: 'orange' }} />
@@ -67,37 +65,39 @@ function Sidebar() {
                                 />
 
                             </div>
-                            <div className='mennu2'>
+                            <div className='mennu2' >
                                 {records.filter((loop) => {
-                                    if (searchTerm == ""){
-                                        return loop
-                                    }else if (loop.nombre_distribuidor.toLowerCase().includes(searchTerm.toLowerCase())){
+                                    if (searchTerm === ""){
                                         return loop
                                     }
-                                }).map((loop) => (
-                                    <div className='Menu'>
-                                        <SubMenu className='nameDis' title={loop.nombre_distribuidor} icon={
-                                                loop.Maximo_Distributor  == 0 ? <FaRegThumbsUp className='myIcon' style={{ color: 'green' }} />
-                                                : loop.Maximo_Distributor == 1 ? <TbAlertTriangle className='myIcon' style={{ color: 'orange' }} />
+                                    if (loop.nombre_distribuidor.toLowerCase().includes(searchTerm.toLowerCase())){
+                                        return loop
+                                    }
+                                    return false;
+                                }).map((loop, index) => (
+                                    <div className='Menu' key={index}>
+                                        <SubMenu className='nameDis' title={loop.nombre_distribuidor} key={index} icon={
+                                                loop.Maximo_Distributor  === 0 ? <FaRegThumbsUp className='myIcon' style={{ color: 'green' }} />
+                                                : loop.Maximo_Distributor === 1 ? <TbAlertTriangle className='myIcon' style={{ color: 'orange' }} />
                                                 : <IoMdCloseCircleOutline className='myIcon' style={{ color: 'red' }} />
                                                 }>
-                                            {loop.Distribuidores_hospitalarios.map((loop1) => (
-                                                <SubMenu title={loop1.DH_name} icon={
-                                                    loop1.Maximo_Dist_Hosp == 0 ? <FaRegThumbsUp className='mySubIcon1' style={{ color: 'green' }} />
-                                                    : loop1.Maximo_Dist_Hosp == 1 ? <TbAlertTriangle className='mySubIcon1' style={{ color: 'orange' }} />
+                                            {loop.Distribuidores_hospitalarios.map((loop1, index) => (
+                                                <SubMenu title={loop1.DH_name} key={index} icon={
+                                                    loop1.Maximo_Dist_Hosp === 0 ? <FaRegThumbsUp className='mySubIcon1' style={{ color: 'green' }} />
+                                                    : loop1.Maximo_Dist_Hosp === 1 ? <TbAlertTriangle className='mySubIcon1' style={{ color: 'orange' }} />
                                                     : <IoMdCloseCircleOutline className='mySubIcon1' style={{ color: 'red' }} />
                                                 }>
-                                                    {loop1.Hospitales.map((loop2) => (
-                                                        <SubMenu title={loop2.hospital_name} icon={
-                                                            loop2.Maximo_Hospital == 0 ? iconColorGreen
-                                                            : loop2.Maximo_Hospital == 1 ? iconColorOrange
+                                                    {loop1.Hospitales.map((loop2, index) => (
+                                                        <SubMenu title={loop2.hospital_name} key={index} icon={
+                                                            loop2.Maximo_Hospital === 0 ? iconColorGreen
+                                                            : loop2.Maximo_Hospital === 1 ? iconColorOrange
                                                             : iconColorRed
                                                         }>
-                                                            {loop2.Oscann.map((loop3) =>( 
-                                                                <div className='Hola' ><MenuItem icon={
-                                                                    (loop3.Maximo_oscann == 0 ? iconColorGreen : (loop3.Maximo_oscann == 1 ? iconColorOrange : iconColorRed))
+                                                            {loop2.Oscann.map((loop3, index) =>( 
+                                                                <div className='Hola' key={index}><MenuItem  icon={
+                                                                    (loop3.Maximo_oscann === 0 ? iconColorGreen : (loop3.Maximo_oscann === 1 ? iconColorOrange : iconColorRed))
                                                                     }>
-                                                                    <div className='namesOscann'>
+                                                                    <div className='namesOscann' key={index}>
                                                                          <Link to={`/Oscann/${loop3.id_oscann}/${loop3.NAME}/${loop2.hospital_name}/${loop1.DH_name}/${loop.nombre_distribuidor}`} style={{ color: 'inherit' }}>{loop3.NAME} </Link>
                                                                     </div></MenuItem>
                                                                 </div>

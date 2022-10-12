@@ -9,15 +9,36 @@ import { Link } from 'react-router-dom';
   const Oscann = () => {
     const {id, name, Hospital, DistribuidorHospital, nombre_distribuidor} = useParams()
     const [records, setRecords] = useState([]);
-
+    
+    
+    /*setInterval(() => {
+      getRecords();
+    }, 8000);*/
     React.useEffect(() => {
       getRecords()
+      
     }, [id])
 
     async function getRecords() {
-      const response = await fetch(`http://localhost:4600/api/getOne/${id}`);
-      const oscanns = await response.json();
-      setRecords(oscanns)
+      let flag = 0;
+      const response = await fetch(`http://localhost:4600/apis/getOne/${id}`);
+
+       // Handle errors
+      
+      if (!response.ok) {
+        flag = 1;
+      }
+      if (flag === 1) {
+        const responseBackup = await fetch(`http://localhost:4600/api/getOne/${id}`);
+        
+        const oscanns = await responseBackup.json();
+        window.alert('conected to Backup. the last update was : ' + Date(oscanns.updatedAt) );
+        setRecords(oscanns)
+      }
+      if (flag === 0){
+        const oscanns = await response.json();
+        setRecords(oscanns)
+      }
     }
 
     return (

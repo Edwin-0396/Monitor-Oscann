@@ -82,10 +82,6 @@ model_distribuidor.find({}, async function (err, data) {
 	}
 }).sort({ updatedAt: -1 });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> Edwin
 
 //dbo.connectToServer.mongoose
 //model_oscann.collection.insertOne(Model_Oscann)

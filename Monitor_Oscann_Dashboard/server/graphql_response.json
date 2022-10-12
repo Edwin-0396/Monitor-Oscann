@@ -11,9 +11,15 @@
 							{
 								"NAME": "Oscann_1",
 								"id_oscann": 1,
+<<<<<<< HEAD
 								"CPU": "2",
 								"RAM": "0",
 								"HD": "0",
+=======
+								"CPU": "0",
+								"RAM": "1",
+								"HD": "1",
+>>>>>>> Dani
 								"LED": 0,
 								"CAMERA": 0
 							},

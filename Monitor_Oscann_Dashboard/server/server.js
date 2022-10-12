@@ -53,12 +53,13 @@ const updateGraphql = async (distribuidor_update) => {
 /*const start = async () => {
 
 	//Only test! - create new database
-	/*for (idx_gql = 0; idx_gql < graphql_Distributor.length; idx_gql++) {
-		await saveGraphql(graphql_Distributor[idx_gql]);
+	for (idx_gql = 0; idx_gql < Model_Oscann.length; idx_gql++) {
+		await saveGraphql(Model_Oscann[idx_gql]);
 	}
 };
-start();*/
 
+start();
+*/
 class Main {
 	static async get_summary_endpoint() {
 		//summary_endpoint = await http.get("/" + "").data; //endpoint from graphql API
@@ -163,7 +164,7 @@ class Main {
 						console.log(compare(data[idx_M_o], graphql_Distributor[idx_GQ]))*/
 						//console.log(Object.entries(data[idx_M_o]).toString() === Object.entries(graphql_Distributor[idx_GQ]).toString());
 						//console.log(_.isEqual(data[idx_M_o], graphql_Distributor[idx_GQ]));
-						if (JSON.stringify(data[idx_M_o]) != JSON.stringify(graphql_Distributor[idx_GQ])) {
+						if (JSON.stringify(data[idx_M_o]) == JSON.stringify(graphql_Distributor[idx_GQ])) {
 							console.log("Document inserted!")
 							await saveGraphql(graphql_Distributor[idx_GQ]);
 						} else {
@@ -176,8 +177,6 @@ class Main {
 					}
 				}
 			}
-
-
 		}).sort({ updatedAt: -1 }).select('-_id -createdAt -updatedAt -__v');
 	}
 }
@@ -186,5 +185,5 @@ cron.schedule("* * * * *", () => {
 	Main.get_summary_endpoint();
 });
 //dbo.connectToServer.mongoose
-//model_oscann.collection.insertOne(Model_Oscann)
+//model_oscann.collection.insertMany(Model_Oscann)
 //model_distribuidor.collection.insertMany(Model_Oscann);

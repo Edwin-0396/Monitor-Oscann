@@ -5,7 +5,7 @@ const model_distribuidor = require('../db/models/model_distribuidor');
 const model_oscann = require('../db/models/model_oscann');
 
 
-//Get all Method
+//Get the whole summary
 router.get('/getAll', async (req, res) => {
     try {
         const data = await model_distribuidor.find();
@@ -17,7 +17,7 @@ router.get('/getAll', async (req, res) => {
 })
 
 
-//Get by ID Method - get Backup
+//Get one oscann from backup
 router.get('/getOne/:id', async (req, res) => {
     try {
         const data = await model_oscann.findOne({ id_oscann: req.params.id.toString() });

@@ -16,8 +16,7 @@ router.get('/getAll', async (req, res) => {
     }
 })
 
-
-//Get one oscann from backup
+//Get by ID Method - get Backup
 router.get('/getOne/:id', async (req, res) => {
     try {
         const data = await model_oscann.findOne({ id_oscann: req.params.id.toString() });
@@ -27,7 +26,6 @@ router.get('/getOne/:id', async (req, res) => {
         res.status(500).json({ message: error.message })
     }
 })
-
 
 //Post Method - create/update Backup
 router.post('/store_detail', async (req, res) => {

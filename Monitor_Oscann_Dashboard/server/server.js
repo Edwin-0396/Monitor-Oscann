@@ -9,7 +9,6 @@ const dbo = require("./db/conn");
 /// cron request
 const cron = require("node-cron");
 const { http} = require("./util");
-//const graphql_Response = require("./graphql_response.json");
 const port = process.env.PORT;
 const app = express();
 app.use(cors())

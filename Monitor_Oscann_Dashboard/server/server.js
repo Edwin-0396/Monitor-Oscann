@@ -110,7 +110,6 @@ class Main {
 				console.log("New insert to empty DB!")
 				return
 			}
-
 			for (let idx_GQ = 0; idx_GQ < graphql_Distributor.length; idx_GQ++) {
 				for (let idx_M_o = 0; idx_M_o < data.length; idx_M_o++) {
 					if (data[idx_M_o].nombre_distribuidor === graphql_Distributor[idx_GQ].nombre_distribuidor) {

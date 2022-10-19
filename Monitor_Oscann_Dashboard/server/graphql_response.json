@@ -12,15 +12,15 @@
 								"NAME": "Oscann_1",
 								"id_oscann": 1,
 								"CPU": "0",
-								"RAM": "0",
-								"HD": "0",
+								"RAM": "1",
+								"HD": "1",
 								"LED": 0,
 								"CAMERA": 0
 							},
 							{
 								"NAME": "Oscann_2",
 								"id_oscann": 2,
-								"CPU": "0",
+								"CPU": "1",
 								"RAM": "0",
 								"HD": "0",
 								"LED": 0,
@@ -278,7 +278,7 @@
 								"id_oscann": 24,
 								"CPU": "0",
 								"RAM": "0",
-								"HD": "0",
+								"HD": "1",
 								"LED": 1,
 								"CAMERA": 1
 							}

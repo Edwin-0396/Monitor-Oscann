@@ -164,16 +164,16 @@ class Main {
 						console.log(compare(data[idx_M_o], graphql_Distributor[idx_GQ]))*/
 						//console.log(Object.entries(data[idx_M_o]).toString() === Object.entries(graphql_Distributor[idx_GQ]).toString());
 						//console.log(_.isEqual(data[idx_M_o], graphql_Distributor[idx_GQ]));
-						if (JSON.stringify(data[idx_M_o]) == JSON.stringify(graphql_Distributor[idx_GQ])) {
-							console.log("Document inserted!")
-							await saveGraphql(graphql_Distributor[idx_GQ]);
-						} else {
+						//if (JSON.stringify(data[idx_M_o]) == JSON.stringify(graphql_Distributor[idx_GQ])) {
+						//	console.log("Document inserted!")
+						//	await saveGraphql(graphql_Distributor[idx_GQ]);
+						//} else {
 							setTimeout(function () {
 								console.log("Database Updated!")
 								updateGraphql(graphql_Distributor[idx_GQ]);
 							}, 3000);
-						}
-						break;
+						//}
+						//break;
 					}
 				}
 			}

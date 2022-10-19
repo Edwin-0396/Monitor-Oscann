@@ -120,8 +120,8 @@ class Main {
 								console.log("Database Updated!")
 								updateGraphql(graphql_Distributor[idx_GQ]);
 							}, 3000);
-						}
-						break;
+						//}
+						//break;
 					}
 				}
 			}

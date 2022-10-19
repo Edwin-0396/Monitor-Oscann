@@ -16,7 +16,6 @@ router.get('/getAll', async (req, res) => {
     }
 })
 
-
 //Get by ID Method - get Backup
 router.get('/getOne/:id', async (req, res) => {
     try {
@@ -27,7 +26,6 @@ router.get('/getOne/:id', async (req, res) => {
         res.status(500).json({ message: error.message })
     }
 })
-
 
 //Post Method - create/update Backup
 router.post('/store_detail', async (req, res) => {

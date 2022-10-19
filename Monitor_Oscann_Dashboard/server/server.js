@@ -118,10 +118,6 @@ class Main {
 			max_D.push(max_oscann_D)
 			max_DH = []
 			max_D = []
-			/*dict[idx_res].Max_Oscann = max_Oscann*/
-			//dict[idx_res].Max_Hospital = max_H
-			/*dict[idx_res].Max_Dist_Hosp = max_DH*/
-			/*dict[idx_res].Max_Distribuidor = max_D*/
 		}
 
 		var dictstring = JSON.stringify(dict);

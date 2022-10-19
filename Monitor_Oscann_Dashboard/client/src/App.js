@@ -3,9 +3,7 @@ import Sidebar from './sidebar';
 import { Routes, Route } from 'react-router-dom';
 import { default as Oscann } from './pages/Oscann';
 import { default as Vnc } from './pages/Vnc';
-import './images/aura.png';
 import './stylesheets/oscan.css';
-import './images/aura.png'
 
 function App() {
   return (

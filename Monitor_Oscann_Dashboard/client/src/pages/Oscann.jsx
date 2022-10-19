@@ -21,7 +21,7 @@ import { Link } from 'react-router-dom';
 
     async function getRecords() {
       let flag = 0;
-      const response = await fetch(`http://localhost:4600/apis/getOne/${id}`);
+      const response = await fetch(`http://localhost:4001/apis/getOne/${id}`);
 
        // Handle errors
       
@@ -29,7 +29,7 @@ import { Link } from 'react-router-dom';
         flag = 1;
       }
       if (flag === 1) {
-        const responseBackup = await fetch(`http://localhost:4600/api/getOne/${id}`);
+        const responseBackup = await fetch(`http://localhost:4001/api/getOne/${id}`);
         
         const oscanns = await responseBackup.json();
         window.alert('conected to Backup. the last update was : ' + Date(oscanns.updatedAt) );

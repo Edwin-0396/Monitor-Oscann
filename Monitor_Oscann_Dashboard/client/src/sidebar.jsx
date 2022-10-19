@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 function Sidebar() {
 
-    const URL = 'http://localhost:4600/api/getAll'
+    const URL = 'http://localhost:4001/api/getAll'
     const [records, setRecords] = useState([]);
     const [searchTerm, setSearchTerm] = useState("")
     const [idInterval, setIdInterval] = useState(null)

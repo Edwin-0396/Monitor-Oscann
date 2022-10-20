@@ -1,14 +1,11 @@
 [
 	{
-		"Status_distribuidor":"Activo",
 		"nombre_distribuidor": "Colombia",
 		"Distribuidores_hospitalarios": [
 			{
 				"DH_name": "eps_regional1",
-				"MAX_HOSP": "",
 				"Hospitales": [
 					{
-						"MAX_OSC":"",
 						"hospital_name": "Santa ana",
 						"Oscann": [
 							{
@@ -18,22 +15,21 @@
 								"RAM": "0",
 								"HD": "0",
 								"LED": 0,
-								"CAMERA": 0,
-								"Max_oscann":""
+								"CAMERA": 0
 							},
 							{
 								"NAME": "Oscann_2",
 								"id_oscann": 2,
-								"CPU": "1",
-								"RAM": "1",
-								"HD": "1",
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "0",
 								"LED": 0,
-								"CAMERA": 1
+								"CAMERA": 0
 							},
 							{
 								"NAME": "Oscann_3",
 								"id_oscann": 3,
-								"CPU": "2",
+								"CPU": "0",
 								"RAM": "0",
 								"HD": "0",
 								"LED": 0,
@@ -47,29 +43,29 @@
 							{
 								"NAME": "Oscann_1",
 								"id_oscann": 4,
-								"CPU": "1",
-								"RAM": "2",
+								"CPU": "0",
+								"RAM": "0",
 								"HD": "0",
 								"LED": 0,
-								"CAMERA": 1
+								"CAMERA": 0
 							},
 							{
 								"NAME": "Oscann_2",
 								"id_oscann": 5,
-								"CPU": "1",
+								"CPU": "0",
 								"RAM": "0",
-								"HD": "1",
+								"HD": "0",
 								"LED": 0,
-								"CAMERA": 1
+								"CAMERA": 0
 							},
 							{
 								"NAME": "Oscann_3",
 								"id_oscann": 6,
-								"CPU": "2",
-								"RAM": "1",
-								"HD": "1",
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "0",
 								"LED": 0,
-								"CAMERA": 1
+								"CAMERA": 0
 							}
 						]
 					}
@@ -84,28 +80,28 @@
 							{
 								"NAME": "Oscann_1",
 								"id_oscann": 7,
-								"CPU": "1",
-								"RAM": "2",
+								"CPU": "0",
+								"RAM": "0",
 								"HD": "0",
 								"LED": 0,
-								"CAMERA": 1
+								"CAMERA": 0
 							},
 							{
 								"NAME": "Oscann_2",
 								"id_oscann": 8,
 								"CPU": "0",
-								"RAM": "1",
+								"RAM": "0",
 								"HD": "0",
-								"LED": 1,
-								"CAMERA": 1
+								"LED": 0,
+								"CAMERA": 0
 							},
 							{
 								"NAME": "Oscann_3",
 								"id_oscann": 9,
 								"CPU": "0",
 								"RAM": "0",
-								"HD": "2",
-								"LED": 1,
+								"HD": "0",
+								"LED": 0,
 								"CAMERA": 0
 							}
 						]
@@ -116,29 +112,29 @@
 							{
 								"NAME": "Oscann_1",
 								"id_oscann": 10,
-								"CPU": "3",
-								"RAM": "2",
-								"HD": "2",
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "0",
 								"LED": 0,
 								"CAMERA": 0
 							},
 							{
 								"NAME": "Oscann_2",
 								"id_oscann": 11,
-								"CPU": "1",
-								"RAM": "1",
-								"HD": "2",
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "0",
 								"LED": 0,
 								"CAMERA": 0
 							},
 							{
 								"NAME": "Oscann_3",
 								"id_oscann": 12,
-								"CPU": "3",
+								"CPU": "0",
 								"RAM": "0",
 								"HD": "0",
 								"LED": 0,
-								"CAMERA": 1
+								"CAMERA": 0
 							}
 						]
 					}
@@ -148,13 +144,12 @@
 	},
 	{
 		"nombre_distribuidor": "Perú",
-		"Status_distribuidor":"Inactivo",
 		"Distribuidores_hospitalarios": [
 			{
 				"DH_name": "eps_regional1",
 				"Hospitales": [
 					{
-						"hospital_name": "Santa ana",
+						"hospital_name": "Goyeneche",
 						"Oscann": [
 							{
 								"NAME": "Oscann_1",
@@ -164,32 +159,32 @@
 								"RAM": "0",
 								"HD": "1",
 								"LED": 0,
-								"CAMERA": 1
+								"CAMERA": 0
 							},
 							{
 								"NAME": "Oscann_2",
 								"id_oscann": 14,
-								"ID": "2",
+								"ID": "0",
 								"CPU": "0",
 								"RAM": "0",
-								"HD": "2",
+								"HD": "0",
 								"LED": 1,
 								"CAMERA": 1
 							},
 							{
 								"NAME": "Oscann_3",
 								"id_oscann": 15,
-								"ID": "2",
+								"ID": "0",
 								"CPU": "0",
-								"RAM": "2",
-								"HD": "3",
-								"LED": 1,
+								"RAM": "1",
+								"HD": "0",
+								"LED": 0,
 								"CAMERA": 1
 							}
 						]
 					},
 					{
-						"hospital_name": "Infantil",
+						"hospital_name": "Ayacucho",
 						"Oscann": [
 							{
 								"NAME": "Oscann_1",
@@ -203,10 +198,10 @@
 							{
 								"NAME": "Oscann_2",
 								"id_oscann": 17,
-								"CPU": "2",
-								"RAM": "1",
-								"HD": "1",
-								"LED": 1,
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "0",
+								"LED": 0,
 								"CAMERA": 1
 							},
 							{
@@ -226,15 +221,15 @@
 				"DH_name": "eps_regional2",
 				"Hospitales": [
 					{
-						"hospital_name": "Minuto de Dios",
+						"hospital_name": "Bellavista",
 						"Oscann": [
 							{
 								"NAME": "Oscann_1",
 								"id_oscann": 19,
 								"CPU": "1",
 								"RAM": "0",
-								"HD": "2",
-								"LED": 1,
+								"HD": "0",
+								"LED": 0,
 								"CAMERA": 1
 							},
 							{
@@ -242,38 +237,38 @@
 								"id_oscann": 20,
 								"CPU": "0",
 								"RAM": "0",
-								"HD": "1",
-								"LED": 1,
+								"HD": "0",
+								"LED": 0,
 								"CAMERA": 1
 							},
 							{
 								"NAME": "Oscann_3",
 								"id_oscann": 21,
-								"CPU": "2",
-								"RAM": "2",
-								"HD": "2",
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "0",
 								"LED": 1,
 								"CAMERA": 1
 							}
 						]
 					},
 					{
-						"hospital_name": "Geriátrico",
+						"hospital_name": "La Noria",
 						"Oscann": [
 							{
 								"NAME": "Oscann_1",
 								"id_oscann": 22,
 								"CPU": "0",
 								"RAM": "0",
-								"HD": "2",
+								"HD": "1",
 								"LED": 0,
 								"CAMERA": 0
 							},
 							{
 								"NAME": "Oscann_2",
 								"id_oscann": 23,
-								"CPU": "1",
-								"RAM": "2",
+								"CPU": "0",
+								"RAM": "0",
 								"HD": "0",
 								"LED": 0,
 								"CAMERA": 0
@@ -292,6 +287,151 @@
 				]
 			}
 		]
-	}
+	},
+	{
+		"nombre_distribuidor": "España",
+		"Distribuidores_hospitalarios": [
+			{
+				"DH_name": "eps_regional1",
+				"Hospitales": [
+					{
+						"hospital_name": "San Carlos",
+						"Oscann": [
+							{
+								"NAME": "Oscann_1",
+								"id_oscann": 13,
+								"ID": "1",
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "1",
+								"LED": 0,
+								"CAMERA": 0
+							},
+							{
+								"NAME": "Oscann_2",
+								"id_oscann": 14,
+								"ID": "0",
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "2",
+								"LED": 1,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_3",
+								"id_oscann": 15,
+								"ID": "0",
+								"CPU": "1",
+								"RAM": "1",
+								"HD": "0",
+								"LED": 0,
+								"CAMERA": 1
+							}
+						]
+					},
+					{
+						"hospital_name": "Infanta Sofía",
+						"Oscann": [
+							{
+								"NAME": "Oscann_1",
+								"id_oscann": 16,
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "0",
+								"LED": 0,
+								"CAMERA": 0
+							},
+							{
+								"NAME": "Oscann_2",
+								"id_oscann": 17,
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "0",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_3",
+								"id_oscann": 18,
+								"CPU": "2",
+								"RAM": "0",
+								"HD": "0",
+								"LED": 0,
+								"CAMERA": 0
+							}
+						]
+					}
+				]
+			},
+			{
+				"DH_name": "eps_regional2",
+				"Hospitales": [
+					{
+						"hospital_name": "José Germain",
+						"Oscann": [
+							{
+								"NAME": "Oscann_1",
+								"id_oscann": 19,
+								"CPU": "1",
+								"RAM": "0",
+								"HD": "0",
+								"LED": 0,
+								"CAMERA": 1
+							},
+							{
+								"NAME": "Oscann_2",
+								"id_oscann": 20,
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "0",
+								"LED": 0,
+								"CAMERA": 0
+							},
+							{
+								"NAME": "Oscann_3",
+								"id_oscann": 21,
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "0",
+								"LED": 0,
+								"CAMERA": 0
+							}
+						]
+					},
+					{
+						"hospital_name": "La Poveda",
+						"Oscann": [
+							{
+								"NAME": "Oscann_1",
+								"id_oscann": 22,
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "0",
+								"LED": 0,
+								"CAMERA": 0
+							},
+							{
+								"NAME": "Oscann_2",
+								"id_oscann": 23,
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "0",
+								"LED": 0,
+								"CAMERA": 0
+							},
+							{
+								"NAME": "Oscann_3",
+								"id_oscann": 24,
+								"CPU": "0",
+								"RAM": "0",
+								"HD": "1",
+								"LED": 1,
+								"CAMERA": 1
+							}
+						]
+					}
+				]
+			}
+		]
+	}	
 ]
-

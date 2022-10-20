@@ -118,7 +118,7 @@ import { Link } from 'react-router-dom';
         <button onClick={getRecords}>Refresh</button>
         </div>
         <div className='Boton2'>
-          <Link to={`/Vnc`}><button>VNC</button></Link>
+        <a href="http://localhost:8080/"><button>VNC</button></a>
         </div>
         </main>
       </div>

@@ -11,9 +11,7 @@ const graphql_Distributor = require("./graphql_distributor.json");
 /// cron request
 const cron = require("node-cron");
 const { http, signs } = require("./util");
-const Model = require('./db/models/model_distribuidor');
 const graphql_response = require("./graphql_response.json");
-var _ = require('lodash');
 //const graphql_Response = require("./graphql_response.json");
 const port = process.env.PORT;
 
@@ -36,10 +34,6 @@ app.listen(port, () => {
 const saveGraphql = async (distributor_save) => {
 	let s = new model_distribuidor(distributor_save);
 	await s.save()
-	//Only test
-	/*.then((doc) => {
-		console.log("Distributor:", doc);
-	});*/
 	return
 };
 
@@ -50,16 +44,6 @@ const updateGraphql = async (distribuidor_update) => {
 	);
 };
 
-/*const start = async () => {
-
-	//Only test! - create new database
-	for (idx_gql = 0; idx_gql < Model_Oscann.length; idx_gql++) {
-		await saveGraphql(Model_Oscann[idx_gql]);
-	}
-};
-
-start();
-*/
 class Main {
 	static async get_summary_endpoint() {
 		//summary_endpoint = await http.get("/" + "").data; //endpoint from graphql API
@@ -136,40 +120,10 @@ class Main {
 			for (let idx_GQ = 0; idx_GQ < graphql_Distributor.length; idx_GQ++) {
 				for (let idx_M_o = 0; idx_M_o < data.length; idx_M_o++) {
 					if (data[idx_M_o].nombre_distribuidor === graphql_Distributor[idx_GQ].nombre_distribuidor) {
-						/*console.log("MONGO DATA: ", JSON.stringify(data[idx_M_o]))
-						console.log("-------------------------------------------------------")
-						console.log("RESPONSE-SUMMARY DATA: ", JSON.stringify(graphql_Distributor[idx_GQ]))
-						console.log("-------------------------------------------------------\n")*/
-						//const obj1 = { prop1: 1, prop2: "foo", prop3: { prop4: 2, prop5: "bar" }, prop7: { pro8: "only in 1" } },
-						//obj2 = { prop1: 3, prop2: "foo", prop3: { prop4: 2, prop5: "foobar" }, prop6: "only in 2" };
-						/*const isObject = val => typeof val === 'object' && val // required for "null" compariso
-						function compare(obj1 = {}, obj2 = {}) {
-							const output = {},
-								merged = { ...obj1, ...obj2 }; // has properties of both
-							for (const key in merged) {
-								const value1 = obj1[key],
-									value2 = obj2[key];
-
-								if (isObject(value1) || isObject(value2))
-									output[key] = compare(value1, value2) // recursively call
-								else
-									output[key] = value1 === value2
-							}
-							return output;
-						}
-						console.log(compare(data[idx_M_o], graphql_Distributor[idx_GQ]))*/
-						//console.log(Object.entries(data[idx_M_o]).toString() === Object.entries(graphql_Distributor[idx_GQ]).toString());
-						//console.log(_.isEqual(data[idx_M_o], graphql_Distributor[idx_GQ]));
-						//if (JSON.stringify(data[idx_M_o]) == JSON.stringify(graphql_Distributor[idx_GQ])) {
-						//	console.log("Document inserted!")
-						//	await saveGraphql(graphql_Distributor[idx_GQ]);
-						//} else {
 							setTimeout(function () {
 								console.log("Database Updated!")
 								updateGraphql(graphql_Distributor[idx_GQ]);
 							}, 3000);
-						//}
-						//break;
 					}
 				}
 			}
@@ -180,6 +134,3 @@ class Main {
 cron.schedule("* * * * *", () => {
 	Main.get_summary_endpoint();
 });
-//dbo.connectToServer.mongoose
-//model_oscann.collection.insertMany(Model_Oscann)
-//model_distribuidor.collection.insertMany(Model_Oscann);

@@ -1,5 +1,5 @@
 main {
-  background-image: url('../images/oscann.png');
+  background-image: url('../images/freed.png');
   background-position: center;
   width: 73em;
   height: 45em;
@@ -92,9 +92,9 @@ button {
 }
 
 .logoA  {
-  background-image: url('../images/Aura01.png');
-  width: 120px;
+  background-image: url('../images/babel.png');
+  width: 180px;
   height: 55px;
-  background-size: 120px;
+  background-size: 180px;
   background-repeat: no-repeat;
 }

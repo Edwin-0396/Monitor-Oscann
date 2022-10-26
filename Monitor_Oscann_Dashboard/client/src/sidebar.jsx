@@ -96,7 +96,7 @@ function Sidebar() {
                                                                     (loop3.Maximo_oscann === 0 ? iconColorGreen : (loop3.Maximo_oscann === 1 ? iconColorOrange : iconColorRed))
                                                                     }>
                                                                     <div className='namesOscann' key={index}>
-                                                                         <Link to={`/Oscann/${loop3.id_oscann}/${loop3.NAME}/${loop2.hospital_name}/${loop1.DH_name}/${loop.nombre_distribuidor}`} style={{ color: 'inherit' }}>{loop3.NAME} </Link>
+                                                                         <Link to={`/Device/${loop3.id_oscann}/${loop3.NAME}/${loop2.hospital_name}/${loop1.DH_name}/${loop.nombre_distribuidor}`} style={{ color: 'inherit' }}>{loop3.NAME} </Link>
                                                                     </div></MenuItem>
                                                                 </div>
                                                             ))}

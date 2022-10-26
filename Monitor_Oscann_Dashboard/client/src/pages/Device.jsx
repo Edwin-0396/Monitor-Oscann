@@ -1,13 +1,15 @@
-import '../stylesheets/oscan.css';
+import '../stylesheets/device.css';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {IoMdRefresh} from 'react-icons/io';
+import {Alert} from 'reactstrap';
 
 
-  const Oscann = () => {
+  const Device = () => {
     const {id, name, Hospital, DistribuidorHospital, nombre_distribuidor} = useParams()
     const [records, setRecords] = useState([]);
-    const oscannAux = {
+    const [responseStatus, setResponseStatus] = useState([]);
+    const deviceAux = {
       "id_oscann": '-',
       "network_status": "-",
       "network_value": "-",
@@ -22,10 +24,13 @@ import {IoMdRefresh} from 'react-icons/io';
       "camera_status": "-",
       "camera_value": "-"
     }
+    const alertNotInfo = 'Not information';
+    const alertBackUp = 'conected to Backup. the last update was : ' ;
 
     async function getRecords() {
       let flag = 0;
-      const response = await fetch(`http://localhost:4600/apis/getOne/${id}`);
+      let devices = 0;
+      const response = await fetch(`http://localhost:4600/api/getOne/${id}`);
        // Handle errors
       if (!response.ok) {
         flag = 1;
@@ -33,20 +38,23 @@ import {IoMdRefresh} from 'react-icons/io';
       if (flag === 1) {
         const responseBackup = await fetch(`http://localhost:4600/api/getOne/${id}`);
         
-        let oscanns = await responseBackup.json();
+        devices = await responseBackup.json();
   
-        if (oscanns == null){
-          oscanns = oscannAux;
-          window.alert('Not information');
+        if (devices == null){
+          devices = deviceAux;
+          //window.alert('Not information');
         }
-        else{
-          window.alert('conected to Backup. the last update was : ' + Date(oscanns.updatedAt));
-        }
-        setRecords(oscanns)
+        setRecords(devices)
+        setResponseStatus(flag)
       }
       if (flag === 0){
-        const oscanns = await response.json();
-        setRecords(oscanns)
+        
+        devices = await response.json();
+        if (devices === null){
+          devices = deviceAux
+        }
+        setRecords(devices)
+        setResponseStatus(flag)
       }
     }
 
@@ -59,6 +67,13 @@ import {IoMdRefresh} from 'react-icons/io';
       <div className='appContainer'>
         <main className='OscannMain'>
           <header>
+            {console.log()}
+            {responseStatus === 1 ?
+              records.id_oscann === '-' ? <Alert>{alertNotInfo}</Alert>
+              :<Alert>{alertBackUp + Date(records.updatedAt)}</Alert>
+            :records.id_oscann === '-' ? <Alert>{alertNotInfo}</Alert>
+            :''
+            }
           <h3>Panel Information / Action</h3>
           <p><b>{nombre_distribuidor}&emsp;{">"}&emsp;{DistribuidorHospital}&emsp;{">"}&emsp;{Hospital}&emsp;{">"}&emsp;{name}</b></p>
         </header>
@@ -123,4 +138,4 @@ import {IoMdRefresh} from 'react-icons/io';
       </div>
     )
   }
-  export default Oscann
+  export default Device

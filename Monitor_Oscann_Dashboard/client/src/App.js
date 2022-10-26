@@ -1,9 +1,9 @@
 import './stylesheets/App.css';
 import Sidebar from './sidebar';
 import { Routes, Route } from 'react-router-dom';
-import { default as Oscann } from './pages/Oscann';
+import { default as Device } from './pages/Device';
 import { default as Vnc } from './pages/Vnc';
-import './stylesheets/oscan.css';
+import './stylesheets/device.css';
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
       <Sidebar />
         <Routes>
           <Route path='/' element={<Home />}/>
-          <Route path='/Oscann' element={<Oscann />}/>
-          <Route path='/Oscann/:id/:name/:Hospital/:DistribuidorHospital/:nombre_distribuidor' element={<Oscann />}/>
+          <Route path='/Device' element={<Device/>}/>
+          <Route path='/Device/:id/:name/:Hospital/:DistribuidorHospital/:nombre_distribuidor' element={<Device/>}/>
           <Route path='/Vnc' element={<Vnc />}/>
         </Routes>
     </div>

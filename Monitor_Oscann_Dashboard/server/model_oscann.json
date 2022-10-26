@@ -1,19 +1,18 @@
 [
 	{
-		"id_oscann": 1,
+		"id_oscann": "1",
 		"network_status": "OK",
-		"network_value": "OK",
+		"network_value": "60%",
 		"ram_status": "OK",
 		"ram_value": "30%",
 		"cpu_status": "OK",
 		"cpu_value": "29%",
-		"drive_status": "Alert",
-		"drive_value": "60%",
-		"ledservice_status": "Fail",
-		"ledservice_value": "Fail",
+		"drive_status": "OK",
+		"drive_value": "30%",
+		"ledservice_status": "OK",
+		"ledservice_value": "OK",
 		"camera_status": "OK",
 		"camera_value": "OK"
-
 	},
 	{
 		"id_oscann": 2,

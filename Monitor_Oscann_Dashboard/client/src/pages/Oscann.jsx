@@ -2,7 +2,6 @@ import '../stylesheets/oscan.css';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {IoMdRefresh} from 'react-icons/io';
-import { Link } from 'react-router-dom';
 
 
   const Oscann = () => {
@@ -38,7 +37,7 @@ import { Link } from 'react-router-dom';
   
         if (oscanns == null){
           oscanns = oscannAux;
-          window.alert('Not information, current date : ' + Date());
+          window.alert('Not information');
         }
         else{
           window.alert('conected to Backup. the last update was : ' + Date(oscanns.updatedAt));
@@ -118,7 +117,7 @@ import { Link } from 'react-router-dom';
         <button onClick={getRecords}>Refresh</button>
         </div>
         <div className='Boton2'>
-          <Link to={`/Vnc`}><button>VNC</button></Link>
+        <a href="http://localhost:8080/"><button>VNC</button></a>
         </div>
         </main>
       </div>

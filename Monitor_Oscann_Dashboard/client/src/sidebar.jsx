@@ -6,7 +6,6 @@ import './stylesheets/sidebar.css';
 import { IoMdCloseCircleOutline } from 'react-icons/io';
 import {FaRegThumbsUp} from "@react-icons/all-files/fa/FaRegThumbsUp";
 import {TbAlertTriangle} from "react-icons/tb";
-
 import { Link } from 'react-router-dom';
 
 function Sidebar() {
@@ -15,7 +14,6 @@ function Sidebar() {
     const [records, setRecords] = useState([]);
     const [searchTerm, setSearchTerm] = useState("")
     const [idInterval, setIdInterval] = useState(null)
-
     const getRecords = async () => {
         const response = await fetch(URL);
         const records = await response.json();
@@ -94,7 +92,7 @@ function Sidebar() {
                                                             : iconColorRed
                                                         }>
                                                             {loop2.Oscann.map((loop3, index) =>( 
-                                                                <div className='Hola' key={index}><MenuItem  icon={
+                                                                <div  key={index}><MenuItem  icon={
                                                                     (loop3.Maximo_oscann === 0 ? iconColorGreen : (loop3.Maximo_oscann === 1 ? iconColorOrange : iconColorRed))
                                                                     }>
                                                                     <div className='namesOscann' key={index}>

@@ -2,9 +2,10 @@ main {
   background-image: url('../images/freed.png');
   background-position: center;
   width: 73em;
-  height: 45em;
+  height: 110vh;
   background-repeat: no-repeat;
   background-size: 1185px;
+  overflow-y:scroll;
 }
 
 header h3 {

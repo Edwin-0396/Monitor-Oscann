@@ -89,12 +89,12 @@ import {Alert} from 'reactstrap';
         <main className='DeviceMain'>
           <header>
             {responseStatus === 1 ?
-              records.id_oscann === '-' ? <Alert>{alertNotInfo}</Alert>
-              :<Alert>{alertBackUp + Date(records.updatedAt)}</Alert>
+              records.id_oscann === '-' ? <Alert color="danger">{alertNotInfo}</Alert>
+              :<Alert color="warning">{alertBackUp + Date(records.updatedAt)}</Alert>
             :records.id_oscann === '-' ? <Alert>{alertNotInfo}</Alert>
             :''
             }
-            {Reboot === 1 ? <Alert>Service {ResponseReboot}</Alert>
+            {Reboot === 1 ? <Alert color="success">Service {ResponseReboot}</Alert>
             : ''
             }
           <h3>Panel Information / Action</h3>

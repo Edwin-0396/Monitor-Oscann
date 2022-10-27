@@ -26,17 +26,28 @@ import {Alert} from 'reactstrap';
       "camera_status": "-",
       "camera_value": "-"
     }
-    let flagReboot = "0";
     const alertNotInfo = 'Not information';
     const alertBackUp = 'conected to Backup. the last update was : ' ;
+    let reboots = 0;
+    let flagReboot = 0;
+    
 
     async function getReboot() {
-      flagReboot = "1";
       const responseReboot = await fetch(`http://localhost:4600/api/Reboot`);
-        setReboot(flagReboot);
-        setResponseReboot(responseReboot);
+        //setReboot(flagReboot);
+
+        if (responseReboot.ok) {
+          flagReboot = 1;
+          reboots = await responseReboot.json();
+          setResponseReboot(reboots);
+          setReboot(flagReboot)
+        }
     }
+    console.log(Reboot)
+
     async function getRecords() {
+      flagReboot = 0;
+      setReboot(flagReboot)
       let flag = 0;
       let devices = 0;
       const response = await fetch(`http://localhost:4600/apis/getOne/${id}`);
@@ -51,7 +62,7 @@ import {Alert} from 'reactstrap';
   
         if (devices == null){
           devices = deviceAux;
-          //window.alert('Not information');
+         
         }
         setRecords(devices)
         setResponseStatus(flag)
@@ -65,8 +76,9 @@ import {Alert} from 'reactstrap';
         setRecords(devices)
         setResponseStatus(flag)
       }
+      
     }
-
+    
     useEffect(() => {
       getRecords()
       // eslint-disable-next-line
@@ -76,14 +88,14 @@ import {Alert} from 'reactstrap';
       <div className='appContainer'>
         <main className='DeviceMain'>
           <header>
-            {console.log()}
             {responseStatus === 1 ?
               records.id_oscann === '-' ? <Alert>{alertNotInfo}</Alert>
               :<Alert>{alertBackUp + Date(records.updatedAt)}</Alert>
             :records.id_oscann === '-' ? <Alert>{alertNotInfo}</Alert>
             :''
             }
-            {Reboot === 1 ? <Alert>{ResponseReboot}</Alert> :""
+            {Reboot === 1 ? <Alert>Service {ResponseReboot}</Alert>
+            : ''
             }
           <h3>Panel Information / Action</h3>
           <p><b>{nombre_distribuidor}&emsp;{">"}&emsp;{DistribuidorHospital}&emsp;{">"}&emsp;{Hospital}&emsp;{">"}&emsp;{name}</b></p>
@@ -128,13 +140,13 @@ import {Alert} from 'reactstrap';
               <td>{records.ledservice_status}</td>
               <td>Led Service</td> 
               <td>{records.ledservice_value}</td>
-              <td><IoMdRefresh className='iconref'/></td>
+              <td><IoMdRefresh onClick={getReboot} className='iconref'/></td>
             </tr>
             <tr className="table-active">
               <td>{records.camera_status}</td>
               <td>Camera Service (HD)</td> 
               <td>{records.camera_value}</td>
-              <td onClick={getReboot}><IoMdRefresh className='iconref'/></td>
+              <td><IoMdRefresh onClick={getReboot} className='iconref'/></td>
             </tr>
             </>
           </tbody>

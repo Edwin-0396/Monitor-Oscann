@@ -75,10 +75,10 @@ function Sidebar() {
                                 }).map((loop, index) => (
                                     <div className='Menu' key={index}>
                                         <SubMenu className='nameDis' title={loop.nombre_distribuidor} key={index} icon={
-                                                loop.Maximo_Distributor  === 0 ? <FaRegThumbsUp className='myIcon' style={{ color: 'green' }} />
-                                                : loop.Maximo_Distributor === 1 ? <TbAlertTriangle className='myIcon' style={{ color: 'orange' }} />
-                                                : <IoMdCloseCircleOutline className='myIcon' style={{ color: 'red' }} />
-                                                }>
+                                            loop.Maximo_Distributor  === "0" ?  <FaRegThumbsUp className='myIcon' style={{ color: 'green' }} />
+                                            : loop.Maximo_Distributor === "1" ? <TbAlertTriangle className='myIcon' style={{ color: 'orange' }} />
+                                            : <IoMdCloseCircleOutline className='myIcon' style={{ color: 'red' }}/>
+                                            }>
                                             {loop.Distribuidores_hospitalarios.map((loop1, index) => (
                                                 <SubMenu title={loop1.DH_name} key={index} icon={
                                                     loop1.Maximo_Dist_Hosp === 0 ? <FaRegThumbsUp className='mySubIcon1' style={{ color: 'green' }} />

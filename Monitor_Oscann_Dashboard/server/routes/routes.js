@@ -4,6 +4,16 @@ const router = express.Router();
 const model_distribuidor = require('../db/models/model_distribuidor');
 const model_oscann = require('../db/models/model_oscann');
 
+//Reboot hardware
+//const Reboot = await fetch(`http://localhost:4600/api/Reboot`);
+router.get('/Reboot', async (req, res) => {
+    try {
+        res.json("Hardware rebooted")
+    }
+    catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+})
 
 //Get all Method
 router.get('/getAll', async (req, res) => {

@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+//It's an example of a model oscann
+
 const OscannSchema = new mongoose.Schema({
 		id_oscann: { type: String, required: true },
 		network_status: { type: String, required: true },

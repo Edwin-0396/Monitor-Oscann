@@ -11,6 +11,8 @@ import {Alert} from 'reactstrap';
     const [responseStatus, setResponseStatus] = useState([]);
     const [Reboot, setReboot] = useState([]);
     const [ResponseReboot, setResponseReboot] = useState([]);
+    
+    // this variable is used when the information is empty or there is not information in the backup
     const deviceAux = {
       "id_oscann": '-',
       "network_status": "-",
@@ -31,11 +33,10 @@ import {Alert} from 'reactstrap';
     let reboots = 0;
     let flagReboot = 0;
     
-
     async function getReboot() {
+      // we used this function to show you if the camera and led reboot button is working
+      // it will show an alert
       const responseReboot = await fetch(`http://localhost:4600/api/Reboot`);
-        //setReboot(flagReboot);
-
         if (responseReboot.ok) {
           flagReboot = 1;
           reboots = await responseReboot.json();
@@ -50,8 +51,12 @@ import {Alert} from 'reactstrap';
       setReboot(flagReboot)
       let flag = 0;
       let devices = 0;
+
+      // real API fetch 
       const response = await fetch(`http://localhost:4600/apis/getOne/${id}`);
-       // Handle errors
+
+      // this condition is used in case the real API have an error
+      // so if it has an error it fetch to the API with the backup information
       if (!response.ok) {
         flag = 1;
       }
@@ -89,12 +94,16 @@ import {Alert} from 'reactstrap';
         <main className='DeviceMain'>
           <header>
             {responseStatus === 1 ?
+            // alerts
+            // condition used to show a red alert in case there is not information on backup
               records.id_oscann === '-' ? <Alert color="danger">{alertNotInfo}</Alert>
+              // in case it found information on the backup it shows a yellow alert indicating that the table consumes information from the backup
               :<Alert color="warning">{alertBackUp + Date(records.updatedAt)}</Alert>
+            // condition used to show a red alert in case there is not information on API
             :records.id_oscann === '-' ? <Alert>{alertNotInfo}</Alert>
             :''
             }
-            {Reboot === 1 ? <Alert color="success">Service {ResponseReboot}</Alert>
+            {Reboot === 1 ? <Alert color="success">Service {ResponseReboot}</Alert>// condition used to show a green alert when the reboot button is clicked
             : ''
             }
           <h3>Panel Information / Action</h3>

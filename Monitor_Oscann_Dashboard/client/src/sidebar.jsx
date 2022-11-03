@@ -14,6 +14,7 @@ function Sidebar() {
     const [records, setRecords] = useState([]);
     const [searchTerm, setSearchTerm] = useState("")
     const [idInterval, setIdInterval] = useState(null)
+    
     const getRecords = async () => {
         const response = await fetch(URL);
         const records = await response.json();

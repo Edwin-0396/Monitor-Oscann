@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import {IoMdRefresh} from 'react-icons/io';
 import {Alert} from 'reactstrap';
 
-
   const Device = () => {
     const {id, name, Hospital, DistribuidorHospital, nombre_distribuidor} = useParams()
     const [records, setRecords] = useState([]);
@@ -44,7 +43,23 @@ import {Alert} from 'reactstrap';
           setReboot(flagReboot)
         }
     }
-    console.log(Reboot)
+    //`http://localhost:8080/api/111/3332222223`
+    async function getVnc() {
+      //console.log('inside Vnc')
+      //console.log(records.host, records.port)
+      //fs.writeFileSync("example/params.json", params_string);
+      await fetch(`http://localhost:8080/api/${records.host}/${records.port}`, {
+        method: "POST",
+        headers: {"Content-type": "application/json; charset=UTF-8"}
+      })
+      .then(response => response.json()) 
+      .then(json => console.log(json))
+      .then(setTimeout(() => {
+        window.location.href = "http://localhost:8080";
+      }, 1000))
+      .catch(err => console.log(err))
+    }
+    
 
     async function getRecords() {
       flagReboot = 0;
@@ -164,7 +179,7 @@ import {Alert} from 'reactstrap';
         <button onClick={getRecords}>Refresh</button>
         </div>
         <div className='Boton2'>
-        <a href="http://localhost:8080/"><button>VNC</button></a>
+        <button onClick={getVnc}>VNC</button>
         </div>
         </main>
       </div>

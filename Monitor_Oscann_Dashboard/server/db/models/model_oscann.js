@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 
 const OscannSchema = new mongoose.Schema({
 		id_oscann: { type: String, required: true },
+		host: { type: String, required: true },
+		port: { type: String, required: true },
 		network_status: { type: String, required: true },
 		network_value: { type: String, required: true },
 		ram_status: { type: String, required: true },

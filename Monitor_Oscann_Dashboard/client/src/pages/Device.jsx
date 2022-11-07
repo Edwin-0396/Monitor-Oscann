@@ -185,4 +185,5 @@ import {Alert} from 'reactstrap';
       </div>
     )
   }
+  
   export default Device

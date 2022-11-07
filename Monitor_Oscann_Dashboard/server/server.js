@@ -12,7 +12,7 @@ const graphql_Distributor = require("./graphql_distributor.json");//fake (proces
 const graphql_response = require("./graphql_response.json"); //fake (original) distributor array of objects 
 const cron = require("node-cron");
 // cron request
-const { http, signs } = require("./util");
+const { http } = require("./util");
 const port = process.env.PORT;
 
 

@@ -27,7 +27,7 @@ app.post('/api/:host/:port', (req,res)=>{
 
 var exec = require('child_process').exec;
 
-cron.schedule("*/10 * * * * *", () => {
+cron.schedule("*/1 * * * * *", () => {
   var exec_client = exec('npm run-script example');
   exec_client.stdout.on('data', function (data) {
     console.log('' + data);

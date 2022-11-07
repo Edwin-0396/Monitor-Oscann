@@ -17,7 +17,7 @@ const OscannSchema = new mongoose.Schema({
 		ledservice_status: { type: String, required: true },
 		ledservice_value: { type: String, required: true },
 		camera_status: { type: String, required: true },
-		camera_value: { type: String, required: true },
+		camera_value: { type: String, required: true }
 	},
 	{ timestamps: true }
 );

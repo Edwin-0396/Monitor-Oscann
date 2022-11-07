@@ -1,4 +1,3 @@
 module.exports = {
-  http: require("./axios"),
-  signs: require("./signs")
+  http: require("./axios")
 };

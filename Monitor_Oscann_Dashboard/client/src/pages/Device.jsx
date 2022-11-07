@@ -56,7 +56,7 @@ import {Alert} from 'reactstrap';
       .then(json => console.log(json))
       .then(setTimeout(() => {
         window.location.href = "http://localhost:8080";
-      }, 1000))
+      }, 1500))
       .catch(err => console.log(err))
     }
     
@@ -179,7 +179,7 @@ import {Alert} from 'reactstrap';
         <button onClick={getRecords}>Refresh</button>
         </div>
         <div className='Boton2'>
-        <button onClick={getVnc}>VNC</button>
+        <a href='https://0d76-186-86-32-98.ngrok.io/vnc.html?resize=remote&autoconnect=true'><button /*{onClick={getVnc}}*/>VNC</button></a>
         </div>
         </main>
       </div>

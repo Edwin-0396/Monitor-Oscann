@@ -143,7 +143,7 @@ import {Alert} from 'reactstrap';
         <button onClick={getRecords}>Refresh</button>
         </div>
         <div className='Boton2'>
-        <a href="http://localhost:8080/"><button>VNC</button></a>
+        <a href="http://localhost:8080">host/<button>VNC</button></a>
         </div>
         </main>
       </div>

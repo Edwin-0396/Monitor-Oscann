@@ -43,11 +43,11 @@ import {Alert} from 'reactstrap';
           setReboot(flagReboot)
         }
     }
-    //`http://localhost:8080/api/111/3332222223`
-    async function getVnc() {
-      //console.log('inside Vnc')
-      //console.log(records.host, records.port)
-      //fs.writeFileSync("example/params.json", params_string);
+
+    // this function will be used just in case you want to try
+    // just uncomment the onclick in the line 181 and delete the <a> tag
+    
+    /*async function getVnc() {
       await fetch(`http://localhost:8080/api/${records.host}/${records.port}`, {
         method: "POST",
         headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -58,7 +58,7 @@ import {Alert} from 'reactstrap';
         window.location.href = "http://localhost:8080";
       }, 1500))
       .catch(err => console.log(err))
-    }
+    }*/
     
 
     async function getRecords() {
@@ -185,5 +185,5 @@ import {Alert} from 'reactstrap';
       </div>
     )
   }
-  
+
   export default Device
